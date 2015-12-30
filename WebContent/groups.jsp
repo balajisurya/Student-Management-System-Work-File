@@ -78,6 +78,7 @@
  					int groupCount=groups.size();
  					%>
  					<h3>Groups Created[<%out.print(groupCount);%>]</h3>
+ 					<div  class="x_panel">
      					<div class="table-responsive">
     <table  id="table" class="table table-bordered table-striped">
         <thead>
@@ -122,7 +123,116 @@
         </tbody>
     </table>
 </div>
+</div>
   </div><!-- end of LisDiv div -->
+  
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Confirmation?</h4> 
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure, you want to delete this Group???</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify',
+                                text: 'successfully deleted...',
+                                type: 'success'
+                            });">Delete</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="confirm-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Edit Group</h4> 
+            </div>
+            <div class="modal-body">
+                 <form class="form-horizontal" role="form">
+                  		<div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="coursename" placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="yearsem" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify:',
+                                text: ' Successfully Updated',
+                                type: 'success'
+                            });">Update</button>
+                      </div>
+                 </form>
+    
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="confirm-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Group Details</h4> 
+            </div>
+            <div class="modal-body">
+                 <form class="form-horizontal" role="form">
+                  		<div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="courseCode" placeholder="" disabled="disabled"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="coursename" placeholder="" disabled="disabled"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="yearsem" placeholder="" disabled="disabled"/>
+                            </div>
+                        </div>
+                 </form>
+    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+</div>
+    
                                 
 	<div id="FormDiv" style="display: none;"> 
        <div class="clearfix"></div><!-- end of clearfix div -->
@@ -233,6 +343,10 @@
             });
         </script>
    <!-- /select2 -->
+   <!-- PNotify -->
+    <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
   <script>
         NProgress.done();
    </script>

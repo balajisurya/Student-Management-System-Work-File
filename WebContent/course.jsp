@@ -11,7 +11,8 @@
   		
  <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!-- Bootstrap CSS -->    
+    
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
    <link href="css/animate.min.css" rel="stylesheet">
@@ -109,25 +110,30 @@
 </div>
  	
  	</div>				
- 	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ 	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-               <h4>Delete Conirmation?</h4> 
+               <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure, you want to delete this course?</h5>
+                <h5>Are you sure, you want to delete this course???</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok" id="driver" href="delete.jsp">Delete</a>
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify',
+                                text: 'successfully deleted...',
+                                type: 'success'
+                            });">Delete</button>
+                
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="modal fade" id="confirm-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirm-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -136,26 +142,30 @@
             <div class="modal-body">
                  <form class="form-horizontal" role="form">
                   		<div class="form-group">
-                    	  <label  class="col-sm-2 control-label" for="courseCode">Course Code</label>
-                    	    <div class="col-sm-10">
-                        		<input type="text" class="form-control" id="courseCode" placeholder="Course Code"/>
+                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
                             </div>
                         </div>
                         <div class="form-group">
-                    	  <label  class="col-sm-2 control-label" for="coursename">Course Name</label>
-                    	    <div class="col-sm-10">
-                        		<input type="text" class="form-control" id="coursename" placeholder="Course Name"/>
+                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="coursename" placeholder=""/>
                             </div>
                         </div>
                         <div class="form-group">
-                    	  <label  class="col-sm-2 control-label" for="yearsem">Years/Semester</label>
-                    	    <div class="col-sm-10">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="Semester" />
+                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="yearsem" placeholder="" />
                             </div>
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                		<button type="submit" class="btn btn-default" data-dismiss="modal">Update</button>
+                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify:',
+                                text: ' Successfully Updated',
+                                type: 'success'
+                            });">Update</button>
                       </div>
                  </form>
     
@@ -171,7 +181,7 @@
 
 
 
-<div class="modal fade" id="confirm-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirm-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -180,28 +190,28 @@
             <div class="modal-body">
                  <form class="form-horizontal" role="form">
                   		<div class="form-group">
-                    	  <label  class="col-sm-2 control-label" for="courseCode">Course Code</label>
-                    	    <div class="col-sm-10">
-                        		<input type="text" class="form-control" id="courseCode" placeholder="Course Code" disabled="disabled"/>
+                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="courseCode" placeholder="" disabled="disabled"/>
                             </div>
                         </div>
                         <div class="form-group">
-                    	  <label  class="col-sm-2 control-label" for="coursename">Course Name</label>
-                    	    <div class="col-sm-10">
-                        		<input type="text" class="form-control" id="coursename" placeholder="Course Name" disabled="disabled"/>
+                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="coursename" placeholder="" disabled="disabled"/>
                             </div>
                         </div>
                         <div class="form-group">
-                    	  <label  class="col-sm-2 control-label" for="yearsem">Years/Semester</label>
-                    	    <div class="col-sm-10">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="Semester" disabled="disabled"/>
+                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="yearsem" placeholder="" disabled="disabled"/>
                             </div>
                         </div>
                  </form>
     
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Close</button>
           </div>
         </div>
     </div>
@@ -222,13 +232,13 @@
                      </div><!-- end of x_title div -->
                       <div class="x_content">
                                    <br />
-                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/CourseServlet" method="post">
+                         <form id="demo"  class="form-horizontal form-label-left" action="" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="course-name">Course Name <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="course-name" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="coursename" type="text" id="coursename" required class="form-control col-md-7 col-xs-12">
                                      </div>
                               </div>
                               <!-- end of form-group 1 -->
@@ -267,22 +277,50 @@
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                  <button type="button" class="btn btn-primary" onclick="showDiv()">Cancel</button>
-                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="false">
-                                       <div class="modal-dialog modal-lg">
-                                          <div class="modal-content">
-					                         <div class="modal-header">
-                    					           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                        	       </button>
-                                                   <h4 class="modal-title" id="myModalLabel">Course Added Successfully</h4>
-                                              </div>
-                                          </div>
-                                        </div>
-                                	 </div>
-                                               	<button type="reset" class="btn btn-info">Clear</button>
-                                                <button type="submit" class="btn btn-success" name="save" data-toggle="modal" data-target=".bs-example-modal-lg" >Save</button>               
+                                   
+                                  <button type="reset" class="btn btn-info">Clear</button>
+                                
+                                  
+                                  <button type="submit" class="btn btn-primary">Small modal</button>
+                                 
+                                    
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
+                        
+
+                                
                          </form><!-- end of form -->
+                              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="test" class="modal fade bs-example-modal-sm ">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                              <h4 class="modal-title">Form Tittle</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                              <form class="form-inline" role="form">
+                                                  <div class="form-group">
+                                                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                      <input type="email" class="form-control sm-input" id="exampleInputEmail5" placeholder="Enter email">
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                      <input type="password" class="form-control sm-input" id="exampleInputPassword5" placeholder="Password">
+                                                  </div>
+                                                  <div class="checkbox">
+                                                      <label>
+                                                          <input type="checkbox"> Remember me
+                                                      </label>
+                                                  </div>
+                                                  <button type="submit" class="btn btn-success">Sign in</button>
+                                              </form>
+
+                                          </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                              
                       </div><!-- end of x-content div -->
                  </div><!-- end of x-panel div -->
               </div><!-- end of col-md-12 col-sm-12 col-xs-12 div -->
@@ -292,31 +330,35 @@
  </div><!-- end of main body -->
 </div><!-- end of container body -->
 
-<div id="custom_notifications" class="custom-notifications dsp_none">
-     <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-     </ul>
-     <div class="clearfix"></div>
-     <div id="notif-group" class="tabbed_notifications"></div>
-</div>
-
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js/validator/bootstrap.min.js"></script>
+ 
   
-  <!-- bootstrap progress js -->
-    <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
-    <script src="js/nicescroll/jquery.nicescroll.min.js"></script>
   
   <!-- custom js -->
     <script src="js/custom.js"></script>
      <!-- formHide jquery -->
   		<script type="text/javascript" src="js/formHide.js"></script>
  	<!-- /formHide jquery -->
-  <!-- /custom js -->
+   <!-- javascripts -->
+    <script src="js/validator/jquery.js"></script>
+  
+    
+    <!-- jquery validate js -->
+    <script type="text/javascript" src="js/validator/jquery.validate.min.js"></script>
+
+    <!-- custom form validation script for this page-->
+    <script src="js/validator/form-validation-script.js"></script>
+    <!--custome script for all page-->
+    <script src="js/validator/scripts.js"></script>  
+     <!-- PNotify -->
+    <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
      
-  <script>
+    <script>
         NProgress.done();
    </script>
-   <!-- /datepicker -->
-  <!-- /footer content -->
+ 
   
   
   

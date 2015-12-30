@@ -59,7 +59,10 @@
    		<%@ include file="master_header.jsp" %>
       <div class="right_col" role="main" >
         <div id="ListDiv" style="display:block;"> <br>
-          <br />
+          <br /><div class="title_left">
+                  <h3>Collect Fees</h3>
+             
+               </div>
  				<div class="x_title">
  				  <div class="clearfix">
  				  </div>
@@ -82,7 +85,7 @@
        <div class="clearfix"></div><!-- end of clearfix div -->
            <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                 <div id="fees-details" class="x_panel" style="height:500px;">
+                 <div id="fees-details" class="x_panel" style="height:auto">
                  	<div  id="printList" class="table-responsive">
     <table id="table" class="table table-bordered table-striped">
         <thead >
@@ -101,38 +104,45 @@
         </tbody>
     </table>
 </div>
-<div class="form-group col-md-12 col-sm-12 col-xs-12">
-                         <label style="text-align: right;" class="control-label col-md-9 col-sm-6 col-xs-12" for="pendingfees">Total Pending Fees
-                          </label>
-                      <div class="col-md-3 col-sm-3 col-xs-3">
-                          <label  id="pendingfees" style="text-align: right;" class="control-label col-md-4 col-sm-12 col-xs-6">
-                          </label>
-                          
-                      </div>
-                </div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                      <label id="payingfees" style="text-align: right;" class="control-label col-md-7 col-sm-6">Enter Amount to be paid
-                      </label>
-                      <div class="col-md-2 col-sm-6">
+                                <div class="col-md-4">
+                                                <h4><label>Total Pending Fees:</label></h4>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th style="width:50%">Amount:</th>
+                                                                <td id="pendingfees"></td>
+                                                            </tr>
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+<br></br>
+
+                <div class="form-group col-md-8 col-sm-8 col-xs-12">
+                     <h4> <label id="payingfees" style="text-align: right;" class="control-label col-md-6 col-sm-6 col-xs-12">Enter Amount to be Paid:
+                      </label></h4>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
                           <input type="text" id="payingfees" placeholder="Enter the amount" name="payingfees" required="required" class="form-control col-md-3 col-xs-12 col-sm-6">
                       </div>
                       <button type="button" data-toggle="modal" data-target="#confirm-delete" class="btn btn-success col-md-1" name="addCourse" ><span class="glyphicon glyphicon-ok" ></span></button>
                  </div>
                  
                  
-                 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5>Do you want to add this fees for this student?</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Ok</a>
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-round btn-success"  data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify:',
+                                text: ' Successfully Paid',
+                                type: 'success'
+                            });">Update</button>
             </div>
         </div>
     </div>
@@ -171,6 +181,10 @@
   		<script type="text/javascript" src="js/formHide.js"></script>
  	<!-- /formHide jquery -->
   <!-- /custom js -->
+  <!-- PNotify -->
+    <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
      
   <script>
         NProgress.done();

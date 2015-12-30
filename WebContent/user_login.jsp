@@ -9,19 +9,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-    <!--external css-->
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="css/font-awesome.css" rel="stylesheet" />
+     <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/mycustom/loginform.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <!-- Custom styling plus plugins -->
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
    <script type="text/javascript">
+   
 $(document).ready(function(){
 $("#login_frm").submit(function(){
  
@@ -72,14 +72,53 @@ return false;
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
                 <input type="password" id="password" class="form-control" placeholder="Password" name="pass-word">
             </div>
-            <div id="msgbox"></div>
-            <label class="checkbox">
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
-            </label>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-            <!-- <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button> -->
+            <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
+            <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target=".bs-example-modal-sm" data-backdrop="static" data-keyboard="false">Forgot Password</button>
+             <div id="msgbox"></div>
+            </div>
+            </form>
+    
+                          
+                          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                                                </button>
+                                                <h4 class="modal-title" id="myModalLabel2">Password Recovery</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                  <div class="form-group">
+                                                     
+                                                      <input type="email" class="form-control sm-input" id="" placeholder="Enter Email">
+                                                  </div>
+                                                 
+                                              
+                                          
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Reset Password</button>
+                                            </div>
+                                            </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
         </div>
-      </form>
-    </div>
+     
+    
+    
+    <script src="js/bootstrap.min.js"></script>
+
+    
+    
+   
+    
+
+    
+
+   
   </body>
 </html>
