@@ -12,7 +12,7 @@ var Script = function () {
        
 
         // validate signup form on keyup and submit
-        $("#demo").validate({
+        $("#demo1").validate({
             rules: {
                 coursename: {
                     required: true,

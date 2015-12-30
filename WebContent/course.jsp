@@ -12,7 +12,7 @@
  <!DOCTYPE html>
 <html lang="en">
 <head><!-- Bootstrap CSS -->    
-    
+     <title>Courses</title>
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
    <link href="css/animate.min.css" rel="stylesheet">
@@ -34,7 +34,19 @@
     <script type = "text/javascript"  src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
      <script src="js/mycustom/autosearch.js" ></script>
      <script src="js/mycustom/crud.js" ></script>
-     <title>Courses</title>
+      <script type = "text/javascript">
+         $(document).ready(function() {
+        	 $("#tr").click(function(event){
+        			
+
+        		   	$('#test').modal('show');
+        	   
+        	          
+        	    });
+         });
+      </script>
+    
+     
 </head>
 <body class="nav-md">
   <div class="container body">
@@ -221,7 +233,7 @@
 
   </div><!-- end of LisDiv div -->
                                 
-	<div id="FormDiv" style="display: none;"> 
+	<div id="FormDiv" style="display: block;"> 
        <div class="clearfix"></div><!-- end of clearfix div -->
            <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
@@ -281,7 +293,7 @@
                                   <button type="reset" class="btn btn-info">Clear</button>
                                 
                                   
-                                  <button type="submit" class="btn btn-primary">Small modal</button>
+                                  <button id="tr" type="button" class="btn btn-primary">Small modal</button>
                                  
                                     
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
@@ -290,36 +302,7 @@
 
                                 
                          </form><!-- end of form -->
-                              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="test" class="modal fade bs-example-modal-sm ">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                              <h4 class="modal-title">Form Tittle</h4>
-                                          </div>
-                                          <div class="modal-body">
-                                              <form class="form-inline" role="form">
-                                                  <div class="form-group">
-                                                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                      <input type="email" class="form-control sm-input" id="exampleInputEmail5" placeholder="Enter email">
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                      <input type="password" class="form-control sm-input" id="exampleInputPassword5" placeholder="Password">
-                                                  </div>
-                                                  <div class="checkbox">
-                                                      <label>
-                                                          <input type="checkbox"> Remember me
-                                                      </label>
-                                                  </div>
-                                                  <button type="submit" class="btn btn-success">Sign in</button>
-                                              </form>
-
-                                          </div>
-
-                                      </div>
-                                  </div>
-                              </div>
+                         
                               
                       </div><!-- end of x-content div -->
                  </div><!-- end of x-panel div -->
@@ -328,7 +311,21 @@
     </div><!-- end of FormDiv div --> 
   </div><!-- end of right col -->
  </div><!-- end of main body -->
-</div><!-- end of container body -->
+</div><!-- end of container body --><div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+                <Strong> Please Enter The Student ID Or Valid ID...</Strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+               
+                
+            </div>
+        </div>
+    </div>
+</div>
 
   <script src="js/validator/bootstrap.min.js"></script>
  

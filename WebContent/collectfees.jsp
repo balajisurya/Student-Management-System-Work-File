@@ -33,7 +33,7 @@
      <script src="js/mycustom/ajax/collectfees.js" ></script>
      <script type = "text/javascript">
          $(document).ready(function() {
-        	 $("#getFeesDetails").click(function(event){
+        	 $("#getFeesDetails1").click(function(event){
         			var id = $("#studentId").val();
         	       if(id){
         	    	   var valid=true;
@@ -41,12 +41,23 @@
         	    		   loadReceiptDetails(id);   
         	    	   }
         	    	   else{
-        	    		   alert("Enter the correct Student Id");
+        	    		   $('#test').modal('show');
         	    	   }
         	    	}
         	       else{
-        	    	   alert("Enter the Student Id");
+        	    	$('#test').modal('show');
         	    	}
+        	          
+        	    });
+         });
+      </script>
+      <script type = "text/javascript">
+         $(document).ready(function() {
+        	 $("#getFeesDetails").click(function(event){
+        			
+
+        		   	$('#test').modal('show');
+        	   
         	          
         	    });
          });
@@ -126,27 +137,10 @@
                       <div class="col-md-4 col-sm-6 col-xs-12">
                           <input type="text" id="payingfees" placeholder="Enter the amount" name="payingfees" required="required" class="form-control col-md-3 col-xs-12 col-sm-6">
                       </div>
-                      <button type="button" data-toggle="modal" data-target="#confirm-delete" class="btn btn-success col-md-1" name="addCourse" ><span class="glyphicon glyphicon-ok" ></span></button>
-                 </div>
-                 
-                 
-                 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5>Do you want to add this fees for this student?</h5>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-round btn-success"  data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify:',
-                                text: ' Successfully Paid',
-                                type: 'success'
-                            });">Update</button>
-            </div>
-        </div>
+                      
+
     </div>
-</div>
+
                  
                  
                  
@@ -161,7 +155,21 @@
   </div><!-- end of right col -->
  </div><!-- end of main body -->
 </div><!-- end of container body -->
-
+<div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+                <Strong> Please Enter The Student ID Or Valid ID...</Strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+               
+                
+            </div>
+        </div>
+    </div>
+</div>
 <div id="custom_notifications" class="custom-notifications dsp_none">
      <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
      </ul>

@@ -36,7 +36,17 @@
     <link href="css/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-
+<script type = "text/javascript">
+         $(document).ready(function() {
+        	 $("#tr").click(function(event){
+        			
+        	     
+        		   	$('#test').modal('show');
+        	   
+        	          
+        	    });
+         });
+      </script>
     
 
 </head>
@@ -119,7 +129,7 @@
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                              <button type="button" class="btn  btn-danger btn-sm" name="" onclick="showUserManagementDiv();">Cancel</button>               
                               <button type="reset" class="btn btn-primary btn-sm" name="">Clear</button>
-                              <button type="submit" name="createuser" class="btn  btn-info btn-sm" name="">Create</button>
+                              <button type="button" id="tr" name="createuser" class="btn  btn-info btn-sm" name="">Create</button>
                               
                                              
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
@@ -208,7 +218,22 @@
             </ul>
             <div class="clearfix"></div>
             <div id="notif-group" class="tabbed_notifications"></div>
+            
+        </div><div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+                <Strong> Please Enter The Student ID Or Valid ID...</Strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+               
+                
+            </div>
         </div>
+    </div>
+</div>
 
         <script src="js/bootstrap.min.js"></script>
 
