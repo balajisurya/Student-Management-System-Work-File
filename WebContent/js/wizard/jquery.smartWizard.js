@@ -32,7 +32,7 @@ function SmartWizard(target, options) {
 
     var _init = function($this) {
         var elmActionBar = $('<div></div>').addClass("actionBar");
-        //elmActionBar.append($this.msgBox);
+        elmActionBar.append($this.msgBox);
         $('.close',$this.msgBox).click(function() {
             $this.msgBox.fadeOut("normal");
             return false;
@@ -71,7 +71,7 @@ function SmartWizard(target, options) {
         }
 
         $this.elmStepContainer.append(allDivs);
-        //elmActionBar.append($this.loader);
+        elmActionBar.append($this.loader);
         $this.target.append($this.elmStepContainer);
 
         if ($this.options.includeFinishButton){
@@ -473,7 +473,7 @@ function SmartWizard(target, options) {
         contentCache:true, // cache step contents, if false content is fetched always from ajax url
         cycleSteps: false, // cycle step navigation
         enableFinishButton: false, // make finish button enabled always
-        hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
+        hideButtonsOnDisabled: true, // when the previous/next/finish buttons are disabled, hide them instead?
         errorSteps:[],    // Array Steps with errors
         labelNext:'Next',
         labelPrevious:'Previous',

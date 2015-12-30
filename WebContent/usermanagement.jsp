@@ -62,7 +62,7 @@
  				  <div class="clearfix">
  				  </div>
  				  </div>
-                        
+                        <div  class="x_panel">
                         
                          <div class="x_content">
                                    <br />
@@ -128,7 +128,7 @@
                               </form>
         </div>      
         </div>               
-        
+        </div>
         
         <div id="dispUser" style="display:block;"> <br>
           <br />

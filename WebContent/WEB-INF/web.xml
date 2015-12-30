@@ -34,11 +34,11 @@
     </init-param>
     <init-param>
       <param-name>UserName</param-name>
-      <param-value>test</param-value>
+      <param-value>test1</param-value>
     </init-param>
     <init-param>
       <param-name>Password</param-name>
-      <param-value>test</param-value>
+      <param-value>test1</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
