@@ -128,13 +128,35 @@ else{%>
                                         </tbody>
 									 </table>
                                 </div>
+                                 <div class="x_title">
                                 <div class="form-group"><!-- start of form group 5 -->
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                   <button type="button" class="btn btn-round btn-danger btn-sm" name="">Cancel</button>               
-                                   <button type="submit" class="btn btn-round btn-info btn-sm" name="" >Save</button>
+                                    <a href="feedresults.jsp"class="btn  btn-danger btn-md" role="button"  >Cancel</a>             
+                                   <button class="btn  btn-success btn-md"data-toggle="modal" data-target="#confirm" >Save</button>
+                                   <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Confirmation?</h4> 
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure?, you want to update results??</h5>
+            </div>
+            <div class="modal-footer">
+                
+                   <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                   <a   type="submit" href="generateInvoice.jsp"class="btn btn-round btn-success" role="button"  >Yes</a>
+                  
+                
+            </div>
+        </div>
+    </div>
+</div>
+                                    
                                </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
+                            </div>
                             </form>
                          </div>
                         </div>

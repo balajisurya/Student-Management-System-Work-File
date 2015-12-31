@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>set title page</title>
+    <title>Edit Profile</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -104,9 +104,8 @@
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                               
-                              <button type="button" class="btn  btn-info btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">Reset Your Password</button>
 
-                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true"  data-backdrop="static" data-keyboard="false">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
 
@@ -119,40 +118,51 @@
                                                   <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Current Password</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="">
+                                                <input type="password" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                        <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12"> New Password</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="">
+                                                <input type="password" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">New Password</label>
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="">
+                                                <input type="password" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                        <div class="form-group"><!-- start of form group 5 -->
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                              <button type="submit" class="btn  btn-danger btn-sm" name="">Cancel</button>               
-                              <button type="submit" class="btn btn-primary btn-sm" name="">Clear</button>
-                              <button type="submit" class="btn  btn-info btn-sm" name="">Save</button>
+                                            
+                              <button type="reset" class="btn btn-round btn-primary btn-md" name="">Clear</button>
+                              <button type="submit" class="btn  btn-round btn-success btn-md" name="" onclick="new PNotify({
+                                title: 'Notification:',
+                                text: 'Reset Successfully ',
+                                type: 'success'
+                            });">Save</button>
                                             </div>
                                             
-</div>
-</div>
+                                  </div>
+                                  </div>
                                         </div>
                                         </div>
                                         </div>
                                         
                                 
-                                
-                             <button type="submit" class="btn  btn-danger btn-sm" name="">Cancel</button>               
-                              <button type="submit" class="btn btn-primary btn-sm" name="">Clear</button>
-                              <button type="submit" class="btn  btn-info btn-sm" name="">Save</button>
+                                   
+                              <button type="reset" class="btn btn-primary btn-md" name="">Clear</button>
+                              
+                                                            <button type="button" class="btn  btn-info btn-md" data-toggle="modal" data-target=".bs-example-modal-lg">Reset Your Password</button>
+                              
+                              <button type="submit" class="btn  btn-success btn-md" name=""
+                              onclick="new PNotify({
+                                title: 'Notification:',
+                                text: ' Successfully Updated',
+                                type: 'success'
+                            });">Save</button>
                               
                                              
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
@@ -188,6 +198,10 @@
         <!-- Datatables -->
         <script src="js/datatables/js/jquery.dataTables.js"></script>
         <script src="js/datatables/tools/js/dataTables.tableTools.js"></script>
+        <!-- PNotify -->
+    <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
         <script>
             $(document).ready(function () {
                 $('input.tableflat').iCheck({

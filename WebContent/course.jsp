@@ -129,7 +129,7 @@
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure, you want to delete this course???</h5>
+                <h5>Are you sure?, you want to delete this course ??</h5>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>

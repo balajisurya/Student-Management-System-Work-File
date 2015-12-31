@@ -1,5 +1,5 @@
 
-    <!-- top navigation -->
+  <!-- top navigation -->
             <div class="top_nav">
 
                 <div class="nav_menu">
@@ -27,12 +27,34 @@
                                     </li>
                                 </ul>
                             </li>
+                             <li class="">
+                             
+                            
+                              <a data-toggle="modal" data-target="#confirm" ><span class="fa fa-unlock"></span></a>
+                             <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
+               <h4>Confirmation?</h4> 
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure?, You want to release the lock ??</h5>
+            </div>
+            <div class="modal-footer">
+                
+                <a href="releaselock.jsp"  class="btn btn-round  btn-success "> Yes</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+                             
+                             </li>
+                             
                      </ul>
                     </nav>
                 </div>
 
             </div>
-    
-        
-    
-

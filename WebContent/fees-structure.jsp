@@ -111,6 +111,62 @@
                  <!-- end of for loop -->
                  </div>
               </div>
+              <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Confirmation?</h4> 
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure?, you want to delete this Fees Structure  ??</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notification',
+                                text: 'successfully deleted...',
+                                type: 'success'
+                            });">Delete</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="confirm-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Edit Fees Structure </h4> 
+            </div>
+            <div class="modal-body">
+                 <form class="form-horizontal" role="form">
+                  		<div class="form-group">
+                    	  <label  class="col-sm-3 control-label" for="courseCode">Fees Structure Name</label>
+                    	    <div class="col-sm-9">
+                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
+                            </div>
+                        </div>
+                   
+                      
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify:',
+                                text: ' Successfully Updated',
+                                type: 'success'
+                            });">Update</button>
+                      </div>
+                 </form>
+    
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+              
           </div>
   </div><!-- end of LisDiv div -->
        </div>                         
@@ -225,6 +281,10 @@
     	<script type="text/javascript" src="js/flot/jquery.flot.stack.js"></script>
     	<script type="text/javascript" src="js/flot/curvedLines.js"></script>
     	<script type="text/javascript" src="js/flot/jquery.flot.resize.js"></script>
+    	 <!-- PNotify -->
+    <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
     	<script>
         	$(document).ready(function () {
             	// [17, 74, 6, 39, 20, 85, 7]

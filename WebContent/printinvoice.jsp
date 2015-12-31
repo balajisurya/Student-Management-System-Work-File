@@ -47,6 +47,7 @@
              $(".btnPrint").printPage();
          });
       </script>
+      
 
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -87,11 +88,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Student Invoices</h2>
-                                   
-                                    <div class="clearfix"></div>
-                                </div>
+                              
                                 <div class="x_content">
                                 <%
                                   ReceiptController studentReceipts=new ReceiptController();

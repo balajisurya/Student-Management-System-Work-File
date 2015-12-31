@@ -184,10 +184,10 @@
                                               <td class=" ">
                                               <ul class="nav navbar-right panel_toolbox">
                                						<li class="dropdown">
-                                 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-pencil"></i></a>
+                                 						<a href="#" class="dropdown-toggle" data-toggle="modal" role="button" data-target="#confirm-edit"><span class="fa fa-pencil"></span></a>
                                						</li>
                                						<li>
-                                 						<a href="#"><i class="fa fa-trash-o"></i></a>
+                                 						<a href="#" class="dropdown-toggle" data-toggle="modal" role="button" data-target="#confirm-delete"><span class="fa fa-trash-o"></span> </a>
                                						</li>
                             					</ul>
                                               </td>
@@ -199,8 +199,99 @@
              					
                					
                                 </div>
+                                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Confirmation?</h4> 
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure, you want to delete this User???</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify',
+                                text: 'successfully deleted...',
+                                type: 'success'
+                            });">Delete</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
                             </div>
                         </div>
+                        <div class="modal fade" id="confirm-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h4>Edit User</h4> 
+            </div>
+            <div class="modal-body">
+                 <form class="form-horizontal" role="form">
+                  		    <div class="form-group">
+                                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-name"> Name <span class="required">*</span>
+                                   </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                         <input name="user-name" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                     </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-email"> Email(User Name) <span class="required">*</span>
+                                   </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                         <input name="user-email" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                     </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-password">Password <span class="required">*</span>
+                                   </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                         <input name="user-password" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                     </div>
+                                     </div>
+                              <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-type">Role</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select class="form-control" name="user-type">
+                                                    <%
+                                                       UserManagementController usermanagementcontroller1=new UserManagementController();
+                                		  				ArrayList<UserManagement> userTypes1=usermanagementcontroller1.getUserType();
+                                		      			for(UserManagement userType:userTypes1){%>
+                                		          			<option value="<%out.print(userType.getUserType());%>"><%out.print(userType.getUserType());%></option>
+                                		      			<%}%>
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-status">Status</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select class="form-control" name="user-status">
+                                                	<% 
+                                                	   ArrayList<UserManagement> userStatusList1=usermanagementcontroller1.getUserStatus();
+                                		      			for(UserManagement userstatus: userStatusList1){%>
+                                		          			<option value="<%out.print(userstatus.getUserStatusId());%>"><%out.print(userstatus.getUserStatusTitle()); %></option>
+                                		      			<%}%>
+                                                </select>
+                                            </div>
+                                            </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
+                                title: 'Notify:',
+                                text: ' Successfully Updated',
+                                type: 'success'
+                            });">Update</button>
+                      </div>
+                 </form>
+    
+            </div>
+            
+        </div>
+    </div>
+</div>
+                        
   </div><!-- end of LisDiv div -->
         
         
@@ -301,6 +392,11 @@
                 });
             });
         </script>
+         <!-- PNotify -->
+    <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
+     
             
 
 </body>

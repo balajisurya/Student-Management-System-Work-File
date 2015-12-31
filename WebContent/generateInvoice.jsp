@@ -114,9 +114,10 @@
                            <div class="form-group"><!-- start of form group 5 -->
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                             <button type="reset" class="btn btn-round btn-danger btn-sm" name="">Cancel</button>               
+                              <!-- <a href="dashboard.jsp" class="btn  btn-danger btn-md" role="button"  >Cancel</a> -->
+                                      
        
-                              <button type="submit" class="btn btn-round btn-info btn-sm" name="" >Get List</button>
+                              <button type="submit" class="btn btn-info btn-md" name=""  style="float:right;">Get List</button>
                                              
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->

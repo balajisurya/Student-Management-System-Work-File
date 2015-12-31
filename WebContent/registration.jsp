@@ -51,7 +51,17 @@ else{%>
 
     <!-- colorpicker -->
     <link href="css/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
-    
+    <script type = "text/javascript">
+         $(document).ready(function() {
+        	 $("#tr").click(function(event){
+        			
+        	     
+        		   	$('#test').modal('show');
+        	   
+        	          
+        	    });
+         });
+      </script>
     <script>
 $(document).ready(function() {
 $('#courses-list').change(function(event) {
@@ -318,7 +328,7 @@ $('#courses-list').change(function(event) {
                                              <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                                 <a href="course.jsp" class="btn btn-primary" role="button"  >Cancel</a>
                                                  <button type="reset" class="btn btn-info">Clear</button>
-                                                 <button type="submit" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Register</button>
+                                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" id="tr">Register</button>
                                              </div>
                                         </div>
                                         
@@ -329,6 +339,21 @@ $('#courses-list').change(function(event) {
     							
                                         
                     </form>
+                    <div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+                <Strong> Please Enter The Student ID Or Valid ID...</Strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+               
+                
+            </div>
+        </div>
+    </div>
+</div>
                 </div>
 
             </div><!--x-panel  -->

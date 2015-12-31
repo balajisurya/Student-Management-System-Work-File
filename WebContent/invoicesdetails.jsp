@@ -41,7 +41,7 @@
             	   $("#invoice-content").load('allInvoices.jsp', {"studentId":id} );
             	}
                else{
-            	   alert("Enter the Student Id");
+            	  
                }
                   
             });
@@ -118,7 +118,7 @@
    <!-- /datepicker -->
   <!-- /footer content -->
   
-  
+ 
   
  
 </body>
