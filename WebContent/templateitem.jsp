@@ -87,9 +87,7 @@
                 					<td style="width: 120px"><%out.print(feesItem.getTemplateItemName());%></td>
                 					<td><%out.print(feesItem.getTemplateItemPrice());%></td>
                 					<td style="width: 250px">
-                   							<a href="#"  data-href="#" data-id="" class="btn btn-default btn-sm" data-toggle="modal" data-target="#confirm-view">
-                           						<span class="glyphicon glyphicon-info-sign"></span> 
-                   							</a>
+                   							
                    							<a href="#"  data-href="#" data-id="" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirm-edit">
                            						<span class="glyphicon glyphicon-edit"></span> 
                    							</a>
@@ -115,13 +113,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
                 <h5>Are you sure?, You want to delete this Fees Item  ??</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+              
                 <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
                                 title: 'Notification',
                                 text: 'successfully deleted',
@@ -138,6 +138,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Edit Fees Item </h4> 
             </div>
             <div class="modal-body">
@@ -156,9 +158,9 @@
                         </div>
                        
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                       
                 		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify:',
+                                title: 'Notification:',
                                 text: ' Successfully Updated',
                                 type: 'success'
                             });">Update</button>

@@ -99,9 +99,7 @@
                 <td><%out.print(course.getCourseName());%></td>
                 <td style="width:50px"><%out.print(course.getDurationInYears()+"/"+course.getDurationInSemester());%></td>
                 <td style="width: 250px">
-                   <a href="#"  data-href="#" data-id="<%out.print(course.getCourseId());%>" class="btn btn-default btn-sm" data-toggle="modal" data-target="#confirm-view">
-                           <span class="glyphicon glyphicon-info-sign"></span> 
-                   </a>
+                
                    <a href="#"  data-href="#" data-id="<%out.print(course.getCourseId());%>" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirm-edit">
                            <span class="glyphicon glyphicon-edit"></span> 
                    </a>
@@ -126,16 +124,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure?, you want to delete this course ??</h5>
+                <h5>Are you sure ?, You want to delete this course ??</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+              
                 <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify',
-                                text: 'successfully deleted...',
+                                title: 'Notification',
+                                text: 'successfully deleted',
                                 type: 'success'
                             });">Delete</button>
                 
@@ -149,6 +149,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Edit Course</h4> 
             </div>
             <div class="modal-body">
@@ -172,9 +174,9 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                        
                 		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify:',
+                                title: 'Notification:',
                                 text: ' Successfully Updated',
                                 type: 'success'
                             });">Update</button>
@@ -192,42 +194,6 @@
 
 
 
-
-<div class="modal fade" id="confirm-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-               <h4>Course Details</h4> 
-            </div>
-            <div class="modal-body">
-                 <form class="form-horizontal" role="form">
-                  		<div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder="" disabled="disabled"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="coursename" placeholder="" disabled="disabled"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="" disabled="disabled"/>
-                            </div>
-                        </div>
-                 </form>
-    
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-    </div>
-</div>
      
 <!-- The form which is used to populate the item data -->
 
@@ -293,7 +259,7 @@
                                   <button type="reset" class="btn btn-info">Clear</button>
                                 
                                   
-                                  <button id="tr" type="button" class="btn btn-primary">Small modal</button>
+                                  <button id="tr" type="submit" class="btn btn-primary">Save</button>
                                  
                                     
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->

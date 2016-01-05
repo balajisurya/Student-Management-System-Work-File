@@ -101,9 +101,8 @@
                 <td><%out.print(group.getGroupName());%></td>
                 <td style="width:150px"><%out.print(studentCount);%></td>
                 <td style="width: 250px">
-                   <a href="#"  data-href="#" data-id="" class="btn btn-default btn-sm" data-toggle="modal" data-target="#confirm-view">
-                           <span class="glyphicon glyphicon-info-sign"></span> 
-                   </a>
+                  
+             
                    <a href="#"  data-href="#" data-id="" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirm-edit">
                            <span class="glyphicon glyphicon-edit"></span> 
                    </a>
@@ -130,16 +129,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure, you want to delete this Group???</h5>
+                <h5>Are you sure ?, You want to delete this Group??</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+               
                 <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify',
-                                text: 'successfully deleted...',
+                                title: 'Notification',
+                                text: 'successfully deleted',
                                 type: 'success'
                             });">Delete</button>
                 
@@ -153,6 +154,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Edit Group</h4> 
             </div>
             <div class="modal-body">
@@ -176,9 +179,9 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                        
                 		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify:',
+                                title: 'Notificattion:',
                                 text: ' Successfully Updated',
                                 type: 'success'
                             });">Update</button>
@@ -197,42 +200,7 @@
 
 
 
-<div class="modal fade" id="confirm-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-               <h4>Group Details</h4> 
-            </div>
-            <div class="modal-body">
-                 <form class="form-horizontal" role="form">
-                  		<div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder="" disabled="disabled"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="coursename" placeholder="" disabled="disabled"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="" disabled="disabled"/>
-                            </div>
-                        </div>
-                 </form>
-    
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-    </div>
-</div>
-    
+
                                 
 	<div id="FormDiv" style="display: none;"> 
        <div class="clearfix"></div><!-- end of clearfix div -->

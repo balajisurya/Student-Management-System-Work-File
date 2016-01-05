@@ -33,7 +33,7 @@
      <script src="js/mycustom/ajax/collectfees.js" ></script>
      <script type = "text/javascript">
          $(document).ready(function() {
-        	 $("#getFeesDetails1").click(function(event){
+        	 $("#getFeesDetails").click(function(event){
         			var id = $("#studentId").val();
         	       if(id){
         	    	   var valid=true;
@@ -53,7 +53,7 @@
       </script>
       <script type = "text/javascript">
          $(document).ready(function() {
-        	 $("#getFeesDetails").click(function(event){
+        	 $("#getFeesDetails1").click(function(event){
         			
 
         		   	$('#test').modal('show');

@@ -30,8 +30,8 @@
                              <li class="">
                              
                             
-                              <a data-toggle="modal" data-target="#confirm" ><span class="fa fa-unlock"></span></a>
-                             <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                              <a data-toggle="modal" data-target="#release" ><i class="fa fa-unlock"></i></a>
+                             <div class="modal fade" id="release" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

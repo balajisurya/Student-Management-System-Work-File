@@ -141,7 +141,7 @@ else{%>
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure?, you want to update results??</h5>
+                <h5>Are you sure ?, You want to update results??</h5>
             </div>
             <div class="modal-footer">
                 

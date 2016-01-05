@@ -203,16 +203,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure, you want to delete this User???</h5>
+                <h5>Are you sure ?, You want to delete this User???</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                
                 <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify',
-                                text: 'successfully deleted...',
+                                title: 'Notification',
+                                text: 'successfully deleted',
                                 type: 'success'
                             });">Delete</button>
                 
@@ -226,6 +228,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Edit User</h4> 
             </div>
             <div class="modal-body">
@@ -277,9 +281,9 @@
                                             </div>
                                             </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+                        
                 		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notify:',
+                                title: 'Notification:',
                                 text: ' Successfully Updated',
                                 type: 'success'
                             });">Update</button>

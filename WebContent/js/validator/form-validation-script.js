@@ -1,65 +1,48 @@
-var Script = function () {
 
-    $.validator.setDefaults({
-        submitHandler: function() { 
-        	alert("hfusfhsfuhshfs");
-       $('#test').modal('show');
-		 }
-    });
-
-    $().ready(function() {
-        // validate the comment form when it is submitted
-       
+     
 
         // validate signup form on keyup and submit
-        $("#demo-form2").validate({
+        $("#demo").validate({
             rules: {
-                coursename: {
+                firstname: {
                     required: true,
                    
                 },
-                years: {
+                lastname: {
                     required: true,
-                   
-                },
-                sems: {
-                    required: true,
-                    
-                },
-                description: {
-                    required: true,
-                   
-                },
+                }
                 
                 
                 
                 
             },
             messages: {                
-                coursename: {
+                firstname: {
                     required: "Please enter a coursename.",
                    
                 },
-                years: {
+                lastname: {
                     required: "Please enter a years.",
                     
                 },
-                sems: {
-                    required: "Please enter a semester.",
-                   
-                },
-                description: {
-                    required: "Please provide a description.",
-                    
-                },
                 
                 
+                
+            },
+            
+            submitHandler: function (form) {
+            	
+            	
+        		$('#tr').click(function () {
+        			 $("#test").modal('show');
+                    form.submit();
+               });
+            
             }
+            
+        
         });
        
 
         
-    });
-
-
-}();
+   

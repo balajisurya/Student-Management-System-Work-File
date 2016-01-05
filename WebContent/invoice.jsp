@@ -117,14 +117,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
                <h4>Confirmation?</h4> 
             </div>
             <div class="modal-body">
-                <h5>Are you sure?, you want to apply fees Structure this students??</h5>
+                <h5>Are you sure ?, You want to apply fees Structure this students??</h5>
             </div>
             <div class="modal-footer">
                 
-                   <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">Cancel</button>
+            
                    <a   type="submit" href="generateInvoice.jsp"class="btn btn-round btn-success" role="button"  >Yes</a>
                   
                 
