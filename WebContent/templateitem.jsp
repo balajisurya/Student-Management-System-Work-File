@@ -33,6 +33,39 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
     <script src="js/mycustom/autosearch.js" ></script>
      <script src="js/mycustom/crud.js" ></script>
+     
+     <script type="text/javascript">
+      
+      
+      function isNumber(evt) {
+  	    evt = (evt) ? evt : window.event;
+  	    var charCode = (evt.which) ? evt.which : evt.keyCode;
+  	    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+  	        return false;
+  	    }
+  	    return true;
+  	}
+      
+      
+      </script>
+      <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js">
+      
+      </script>
+      <script type = "text/javascript">
+               $(document).ready(function() {
+              	 $("#clicktemp").click(function(){
+              		 
+              		 
+              		   $('#demotemp').validate();
+              				   
+              	  
+               });
+              
+             	
+               });
+            </script>
+      
+      
 </head>
 <body class="nav-md">
   <div class="container body">
@@ -143,27 +176,23 @@
                <h4>Edit Fees Item </h4> 
             </div>
             <div class="modal-body">
-                 <form class="form-horizontal" role="form">
+                 <form class="form-horizontal" role="form" id="demotemp1">
                   		<div class="form-group">
                     	  <label  class="col-sm-3 control-label" for="courseCode">Fees Item</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
+                        		<input type="text" class="form-control" id="courseCode" placeholder=""required="required"/>
                             </div>
                         </div>
                         <div class="form-group">
                     	  <label  class="col-sm-3 control-label" for="coursename">Amount</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="coursename" placeholder=""/>
+                        		<input type="text" class="form-control" id="coursename" placeholder="" required="required" onkeypress="return isNumber(event)"/>
                             </div>
                         </div>
                        
                         <div class="modal-footer">
                        
-                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notification:',
-                                text: ' Successfully Updated',
-                                type: 'success'
-                            });">Update</button>
+                		<button type="submit" class="btn btn-round btn-success" id="clicktemp1">Update</button>
                       </div>
                  </form>
     
@@ -192,7 +221,7 @@
                      </div><!-- end of x_title div -->
                       <div class="x_content">
                                    <br />
-                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/TemplateItemServlet" method="post">
+                         <form id="demotemp" data-parsley-validate class="form-horizontal form-label-left" action="" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="template-name">Fees Item Name <span class="required">*</span>
@@ -208,7 +237,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="item-price">Fees Item Price <span class="required">*</span>
                                     </label>
                                       <div class="col-md-6 col-sm-6 col-xs-12">
-                                           <input type="text" id="item-price" name="item-price" required class="form-control col-md-7 col-xs-12">
+                                           <input type="text" id="item-price" name="item-price" required class="form-control col-md-7 col-xs-12"  onkeypress="return isNumber(event)">
                                       </div>
                               </div>
                               <!-- end of form-group 2 -->
@@ -219,19 +248,9 @@
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                  <button type="button" class="btn btn-primary" onclick="showDiv()">Cancel</button>
-                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="false">
-                                       <div class="modal-dialog modal-lg">
-                                          <div class="modal-content">
-					                         <div class="modal-header">
-                    					           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                        	       </button>
-                                                   <h4 class="modal-title" id="myModalLabel">Template created Successfully</h4>
-                                              </div>
-                                          </div>
-                                        </div>
-                                	 </div>
+                                   
                                                	<button type="reset" class="btn btn-info">Clear</button>
-                                                <button type="submit" class="btn btn-success" name="save" data-toggle="modal" data-target=".bs-example-modal-lg" >Save</button>               
+                                                <button type="submit" class="btn btn-success" name="save" id="clicktemp">Save</button>               
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
                          </form><!-- end of form -->

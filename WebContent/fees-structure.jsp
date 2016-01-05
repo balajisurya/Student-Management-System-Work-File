@@ -32,6 +32,19 @@
     <link rel="stylesheet" href="css/switchery/switchery.min.css" />
     <title>Fees Structure</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script type = "text/javascript">
+         $(document).ready(function() {
+        	 $("#fees").click(function(){
+        		 
+        		 
+        		   $('#demofees').validate();
+        		   
+        		  
+        	  
+         });
+         });
+      </script>
 </head>
 <body class="nav-md">
   <div class="container body">
@@ -124,7 +137,7 @@
               
                 <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
                                 title: 'Notification',
-                                text: 'successfully deleted...',
+                                text: 'successfully deleted',
                                 type: 'success'
                             });">Delete</button>
                 
@@ -147,18 +160,14 @@
                   		<div class="form-group">
                     	  <label  class="col-sm-3 control-label" for="courseCode">Fees Structure Name</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
+                        		<input type="text" class="form-control" id="courseCode" required="required" placeholder=""/>
                             </div>
                         </div>
                    
                       
                         <div class="modal-footer">
                        
-                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notification:',
-                                text: ' Successfully Updated',
-                                type: 'success'
-                            });">Update</button>
+                		<button type="submit" class="btn btn-round btn-success" >Update</button>
                       </div>
                  </form>
     
@@ -183,24 +192,24 @@
                      </div><!-- end of x_title div -->
                       <div class="x_content">
                                    <br />
-                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/FeesTemplateServlet" method="post">
+                         <form id="demofees" data-parsley-validate class="form-horizontal form-label-left" action="" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="structure-name">Fees Structure Name <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="structure-name" type="text" id="structure-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="structure-name" type="text" id="structure-name" required="required" class="form-control col-md-6 col-xs-12">
                                      </div>
                               </div>
                               <!-- end of form-group 1 -->
                               
                               <!-- start of form-group 2 -->          
                               <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Fees Items</label>
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Fees Items </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select name="templateItemList" class="form-control select2_multiple"  multiple="multiple" style="width:495px">
+                                                <select name="templateItemList" class="form-control select2_multiple"  multiple="multiple" style="width:610px" required="required">
                                                 <%int templateItemCount=templateItems.size();
-                             					if(templateItemCount>0){
+                             					if(templateItemCount>1){
                              					 for(TemplateItem templateItem:templateItems){%>
                                                     <option value="<%out.print(templateItem.getTemplateItemId());%>"><%out.print(templateItem.getTemplateItemName());%></option>
                                                   <%}
@@ -218,19 +227,9 @@
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                  <button type="button" class="btn btn-primary" onclick="showDiv()">Cancel</button>
-                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="false">
-                                       <div class="modal-dialog modal-lg">
-                                          <div class="modal-content">
-					                         <div class="modal-header">
-                    					           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                        	       </button>
-                                                   <h4 class="modal-title" id="myModalLabel">Fees Structure Created Successfully</h4>
-                                              </div>
-                                          </div>
-                                        </div>
-                                	 </div>
+                                   
                                                	<button type="reset" class="btn btn-info">Clear</button>
-                                                <button type="submit" class="btn btn-success" name="save" data-toggle="modal" data-target=".bs-example-modal-lg" >Save</button>               
+                                                <button id="fees" type="submit" class="btn btn-success" name="save" >Save</button>               
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
                          </form><!-- end of form -->
@@ -498,7 +497,7 @@
                 $(".select2_group").select2({});
                 $(".select2_multiple").select2({
                     maximumSelectionLength: null,
-                    placeholder: "click to check available courses",
+                    placeholder: "Select available courses",
                     allowClear: true
                 });
             });

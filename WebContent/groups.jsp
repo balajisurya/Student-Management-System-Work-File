@@ -160,31 +160,17 @@
             </div>
             <div class="modal-body">
                  <form class="form-horizontal" role="form">
-                  		<div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
-                            </div>
-                        </div>
+                  		
                         <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
+                    	  <label  class="col-sm-3 control-label" for="coursename">Group Name</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="coursename" placeholder=""/>
+                        		<input type="text" class="form-control" id="groupname" placeholder="" required="required"/>
                             </div>
                         </div>
-                        <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="" />
-                            </div>
-                        </div>
+                        
                         <div class="modal-footer">
                         
-                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notificattion:',
-                                text: ' Successfully Updated',
-                                type: 'success'
-                            });">Update</button>
+                		<button type="submit" class="btn btn-round btn-success" >Update</button>
                       </div>
                  </form>
     
@@ -228,7 +214,7 @@
                               <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Courses For This Group</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:495px" >
+                                                <select  name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:495px" >
                                                 <%
                                                 int courseSemestersCount=courseSemesterList.size();
                              					if(courseSemestersCount>0){
@@ -248,19 +234,9 @@
                            <!-- start of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                  <button type="button" class="btn btn-primary" onclick="showDiv()">Cancel</button>
-                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="false">
-                                       <div class="modal-dialog modal-lg">
-                                          <div class="modal-content">
-					                         <div class="modal-header">
-                    					           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                        	       </button>
-                                                   <h4 class="modal-title" id="myModalLabel">Group Created Successfully</h4>
-                                              </div>
-                                          </div>
-                                        </div>
-                                	 </div>
+                                    
                                                	<button type="reset" class="btn btn-info">Clear</button>
-                                                <button type="submit" class="btn btn-success" name="save" data-toggle="modal" data-target=".bs-example-modal-lg" >save</button>               
+                                                <button type="submit" class="btn btn-success" name="save">save</button>               
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
                          </form><!-- end of form -->

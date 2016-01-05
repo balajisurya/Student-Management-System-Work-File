@@ -36,16 +36,31 @@
      <script src="js/mycustom/crud.js" ></script>
       <script type = "text/javascript">
          $(document).ready(function() {
-        	 $("#tr").click(function(event){
+        	 $("#clickcourse").click(function(event){
         			
 
-        		   	$('#test').modal('show');
+        		   	$('#coursemodal').modal('show');
         	   
         	          
         	    });
          });
       </script>
-    
+    <script type="text/javascript">
+      
+      
+      function isNumber(evt) {
+  	    evt = (evt) ? evt : window.event;
+  	    var charCode = (evt.which) ? evt.which : evt.keyCode;
+  	    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+  	        return false;
+  	    }
+  	    return true;
+  	}
+  	
+      
+      
+      
+      </script>
      
 </head>
 <body class="nav-md">
@@ -158,28 +173,24 @@
                   		<div class="form-group">
                     	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder=""/>
+                        		<input type="text" class="form-control" id="courseCode" placeholder=""  required="required" />
                             </div>
                         </div>
                         <div class="form-group">
                     	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="coursename" placeholder=""/>
+                        		<input type="text" class="form-control" id="coursename" placeholder="" required="required"/>
                             </div>
                         </div>
                         <div class="form-group">
                     	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="" />
+                        		<input type="text" class="form-control" id="yearsem" placeholder="" required="required" onkeypress="return isNumber(event)"/>
                             </div>
                         </div>
                         <div class="modal-footer">
                         
-                		<button type="submit" class="btn btn-round btn-success" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notification:',
-                                text: ' Successfully Updated',
-                                type: 'success'
-                            });">Update</button>
+                		<button type="submit" class="btn btn-round btn-success">Update</button>
                       </div>
                  </form>
     
@@ -226,7 +237,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="years">Duration in years <span class="required">*</span>
                                     </label>
                                       <div class="col-md-6 col-sm-6 col-xs-12">
-                                           <input type="text" id="years" name="years" required class="form-control col-md-7 col-xs-12">
+                                           <input type="text" id="years" name="years" required class="form-control col-md-7 col-xs-12" onkeypress="return isNumber(event)">
                                       </div>
                               </div>
                               <!-- end of form-group 2 -->
@@ -236,7 +247,7 @@
                                     <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12" for="sems">Duration in Semesters<span class="required">*</span>
                                     </label>
                                      <div class="col-md-6 col-sm-6 col-xs-12">
-                                           <input id="sems" name="sems" required class="form-control col-md-7 col-xs-12"  type="text" name="middle-name">
+                                           <input id="sems" name="sems" required class="form-control col-md-7 col-xs-12"  type="text" name="middle-name" onkeypress="return isNumber(event)">
                                      </div>
                                </div>
                                <!-- end of form-group 3 -->
@@ -259,7 +270,7 @@
                                   <button type="reset" class="btn btn-info">Clear</button>
                                 
                                   
-                                  <button id="tr" type="submit" class="btn btn-primary">Save</button>
+                                  <button type="submit" class="btn btn-primary">Save</button>
                                  
                                     
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
@@ -302,17 +313,8 @@
      <!-- formHide jquery -->
   		<script type="text/javascript" src="js/formHide.js"></script>
  	<!-- /formHide jquery -->
-   <!-- javascripts -->
-    <script src="js/validator/jquery.js"></script>
   
-    
-    <!-- jquery validate js -->
-    <script type="text/javascript" src="js/validator/jquery.validate.min.js"></script>
-
-    <!-- custom form validation script for this page-->
-    <script src="js/validator/form-validation-script.js"></script>
-    <!--custome script for all page-->
-    <script src="js/validator/scripts.js"></script>  
+   
      <!-- PNotify -->
     <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
     <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>

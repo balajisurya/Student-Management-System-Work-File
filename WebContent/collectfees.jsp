@@ -52,15 +52,16 @@
          });
       </script>
       <script type = "text/javascript">
-         $(document).ready(function() {
-        	 $("#getFeesDetails1").click(function(event){
-        			
-
-        		   	$('#test').modal('show');
-        	   
-        	          
-        	    });
-         });
+      function isNumber(evt) {
+    	    evt = (evt) ? evt : window.event;
+    	    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    	    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    	        return false;
+    	    }
+    	    return true;
+    	}
+    	
+        
       </script>
 </head>
 <body class="nav-md">
@@ -83,7 +84,7 @@
  				     <div class="form-group">
                             
                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                     <input type="text" id="studentId" name="studentId" required="required" class="form-control col-md-7 col-xs-12" placeholder="Enter Student Id">
+                                     <input type="text" id="studentId" name="studentId" required="required" class="form-control col-md-7 col-xs-12" placeholder="Enter Student Id" onkeypress="return isNumber(event)">
                                </div>
                               <input type="button"  class="btn btn-primary" id="getFeesDetails" name="getFeesDetails" value="Fees Details">
                                

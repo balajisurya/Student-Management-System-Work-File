@@ -36,15 +36,26 @@
     <link href="css/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 <script type = "text/javascript">
          $(document).ready(function() {
-        	 $("#tr").click(function(event){
-        			
-        	     
-        		   	$('#test').modal('show');
-        	   
-        	          
-        	    });
+        	 $("#tr").click(function(){
+        		 
+        		 
+        		   $('#demo').validate({
+        				   submitHandler: function(form) {
+        			      
+        			          
+
+        	        			$('#usermanagement').modal('show');
+        			        
+        			            return false;     
+        			        }
+        			    });	   
+        		   
+        		  
+        	  
+         });
          });
       </script>
     
@@ -76,27 +87,27 @@
                         
                          <div class="x_content">
                                    <br />
-                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/UserManagementServlet" method="post">
+                         <form id="demo" data-parsley-validate class="form-horizontal form-label-left" action="" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-name"> Name <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="user-name" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="user-name" type="text" id="username" required class="form-control col-md-7 col-xs-12">
                                      </div>
                               </div>
                               <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-email"> Email(User Name) <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="user-email" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="user-email" type="text" id="useremail" required class="form-control col-md-7 col-xs-12">
                                      </div>
                               </div>
                               <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-password">Password <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="user-password" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="user-password" type="password" id="userpassword" required class="form-control col-md-7 col-xs-12">
                                      </div>
                                      </div>
                               <div class="form-group">
@@ -129,13 +140,34 @@
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                              <button type="button" class="btn  btn-danger btn-sm" name="" onclick="showUserManagementDiv();">Cancel</button>               
                               <button type="reset" class="btn btn-primary btn-sm" name="">Clear</button>
-                              <button type="button" id="tr" name="createuser" class="btn  btn-info btn-sm" name="">Create</button>
+                              <button type="submit" id="tr" name="createuser" class="btn  btn-info btn-sm" name="">Create</button>
                               
                                              
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
-                        
+                                
                               </form>
+                               <div class="modal fade" id="usermanagement" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
+               <h4>Confirmation?</h4> 
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure?, You want to create a new user ??</h5>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="submit" class="btn btn-round btn-success" >Yes</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+                              
+                               
         </div>      
         </div>               
         </div>
@@ -238,21 +270,21 @@
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-name"> Name <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="user-name" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="user-name" type="text" id="username" required class="form-control col-md-7 col-xs-12">
                                      </div>
                               </div>
                               <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-email"> Email(User Name) <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="user-email" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="user-email" type="text" id="useremail" required class="form-control col-md-7 col-xs-12">
                                      </div>
                               </div>
                               <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-password">Password <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="user-password" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
+                                         <input name="user-password" type="password" id="userpasword" required class="form-control col-md-7 col-xs-12">
                                      </div>
                                      </div>
                               <div class="form-group">
@@ -289,6 +321,11 @@
                             });">Update</button>
                       </div>
                  </form>
+                 
+                 
+            
+        
+                 
     
             </div>
             
@@ -308,27 +345,7 @@
 </div>
 </div>
 </div>
-<div id="custom_notifications" class="custom-notifications dsp_none">
-            <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-            </ul>
-            <div class="clearfix"></div>
-            <div id="notif-group" class="tabbed_notifications"></div>
-            
-        </div><div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            
-            <div class="modal-body">
-                <Strong> Please Enter The Student ID Or Valid ID...</Strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
-               
-                
-            </div>
-        </div>
-    </div>
-</div>
+
 
         <script src="js/bootstrap.min.js"></script>
 
@@ -396,6 +413,8 @@
                 });
             });
         </script>
+        
+     
          <!-- PNotify -->
     <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
     <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
