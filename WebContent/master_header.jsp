@@ -30,7 +30,7 @@
                              <li class="">
                              
                             
-                              <a data-toggle="modal" data-target="#release" ><i class="fa fa-unlock"></i></a>
+                              <a  href="javascript:;" data-toggle="modal" data-target="#release" ><i class="fa fa-unlock"></i></a>
                              <div class="modal fade" id="release" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">

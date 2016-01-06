@@ -107,7 +107,8 @@
                 <th>Semester</th>
                 <th>Total Fees</th>
                 <th>Pending Fees</th>
-                <!--<th>Amount</th> -->
+                <th>Total Paid  Fees</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody id="bodyContent">
@@ -116,29 +117,19 @@
         </tbody>
     </table>
 </div>
-                                <div class="col-md-4">
-                                                <h4><label>Total Pending Fees:</label></h4>
-                                                <div class="table-responsive">
-                                                    <table class="table table-striped">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th style="width:50%">Amount:</th>
-                                                                <td id="pendingfees"></td>
-                                                            </tr>
-                                                            
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
+                             
 <br></br>
 
-                <div class="form-group col-md-8 col-sm-8 col-xs-12">
+                <div class="form-group">
                      <h4> <label id="payingfees" style="text-align: right;" class="control-label col-md-6 col-sm-6 col-xs-12">Enter Amount to be Paid:
                       </label></h4>
-                      <div class="col-md-4 col-sm-6 col-xs-12">
-                          <input type="text" id="payingfees" placeholder="Enter the amount" name="payingfees" required="required" class="form-control col-md-3 col-xs-12 col-sm-6">
+                     <div class="col-md-3 col-sm-3 col-xs-3">
+                          <input onkeypress="return isNumber(event)" type="text" id="payingfees" placeholder="Enter the amount" name="payingfees" required="required" class="form-control col-md-3 col-xs-12 col-sm-6">
+                        
+                
+                          
                       </div>
-                      
+                       <button  type="submit" class="btn btn-success btn-">Paid</button>
 
     </div>
 
@@ -168,6 +159,61 @@
                
                 
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="confirm-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+        <form>
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
+               <h4>Amount to be Paid</h4> 
+            </div>
+            <div class="modal-body">
+                 <div  class="table-responsive">
+                
+    					  <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                               
+                                                <th>Fees Item</th>
+                                                <th>Fee</th>
+                                                <th> Paid Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">gifdjifdkgkdggkkdfgkfkgklfgklfkgfkldklfdlfdklflkdklhklgkhlfglkhlfgdljhkgfjj</th>
+                                                <td>Mark</td>
+                                                <td> <input name="country" required id="country" size="10" type="text" onkeypress="return isNumber(event)" /></td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                             <td> <input name="country" id="country" size="10" type="text" onkeypress="return isNumber(event)" required /></td>
+                                             
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Larry</td>
+                                        <td> <input name="country" id="country" size="10" type="text" onkeypress="return isNumber(event)" required /></td>
+                                              
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                 <!-- end of for loop -->
+                 </div>
+    
+            </div>
+             <div class="modal-footer">
+                        
+                		<button type="submit" class="btn btn-round btn-success">Paid</button>
+                      </div>
+            </form>
         </div>
     </div>
 </div>

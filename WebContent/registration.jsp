@@ -119,11 +119,11 @@ $('#courses-list').change(function(event) {
                 <div class="x_content">
                     <br />
                     <form id="formreg" action="" method="post" class="form-horizontal form-label-left">
-           <div class="col-md-6 col-xs-12">
+          
                          <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">First Name <span class="required">*</span>
                              </label>
-                              <div class="col-md-9 col-sm-9 col-xs-12">
+                              <div class="col-md-6 col-sm-6 col-xs-12">
                                   <input type="text" id="first-name" name="first-name" required="required" class="form-control col-md-7 col-xs-12">
                               </div>
                          </div>
@@ -131,7 +131,7 @@ $('#courses-list').change(function(event) {
                           <div class="form-group">
                               <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Name <span class="required">*</span>
                                </label>
-                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
                                   <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                                  </div>
                           </div>
@@ -139,7 +139,7 @@ $('#courses-list').change(function(event) {
                           <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Guardian-First Name <span class="required">*</span>
                                  </label>
-                                 <div class="col-md-9 col-sm-9 col-xs-12">
+                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                        <input type="text" id="guardianfirst-name" name="guardianfirst-name" required="required" class="form-control col-md-7 col-xs-12">
                                  </div>
                           </div>
@@ -147,14 +147,14 @@ $('#courses-list').change(function(event) {
                            <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Guardian-Last Name <span class="required">*</span>
                                    </label>
-                                   <div class="col-md-9 col-sm-9 col-xs-12">
+                                   <div class="col-md-6 col-sm-6 col-xs-12">
                                        <input type="text" id="guardianlast-name" name="guardianlast-name" required="required" class="form-control col-md-7 col-xs-12">
                                    </div>
                             </div>
                             
                             <div class="form-group">
                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender <span class="required">*</span></label>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
                                      <div class="radio">
                                          <select class="form-control" id="sex" name="sex" required="required">
                                         <option value="" disabled selected>Select Sex</option>
@@ -169,7 +169,7 @@ $('#courses-list').change(function(event) {
                                    <div class="form-group">
                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
                                           </label>
-                                           <div class="col-md-9 col-sm-9 col-xs-12">
+                                           <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input id="birthday"  data-inputmask="'mask': '99/99/9999'" name="student_dob" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                                               
                                            </div>
@@ -177,7 +177,7 @@ $('#courses-list').change(function(event) {
                              <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="student_email">Email ID <span class="required">*</span>
                                         </label>
-                                           <div class="col-md-9 col-sm-9 col-xs-12">
+                                           <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="email" id="student_email" name="student_email" required="required" class="form-control col-md-7 col-xs-12">
                                            </div>
                                  </div>
@@ -185,7 +185,7 @@ $('#courses-list').change(function(event) {
                                   <div class="form-group">
                                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contact_number">Contact Number <span class="required">*</span>
                                          </label>
-                                         <div class="col-md-9 col-sm-9 col-xs-12">
+                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" id="contact_number" name="contact_number" required="required" class="form-control col-md-7 col-xs-12"   onkeypress="return isNumber(event)">
                                          </div>
                                   </div>
@@ -203,7 +203,7 @@ $('#courses-list').change(function(event) {
                                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image_path">Student Photo <span class="required">*</span>
                                        </label>
                                        <div class="col-md-55">
-                                            <div class="thumbnail" style="height: 100%; width:180%">
+                                            <div class="thumbnail" style="height: 70%; width:70%">
                                                 <div class="image view view-first" style="height: 100%; width:100%">
                                                     <img id="thumbnil" style="width:100%;  display: block;" src="images/user.png" alt="image" />
                                                     <div class="mask">
@@ -214,12 +214,12 @@ $('#courses-list').change(function(event) {
                                         </div>
                                 </div>
                                 
-                                </div>
-                                 <div class="col-md-6 col-xs-12">  
+                            
+                            
                                        <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address_line_1">Address Line 1 <span class="required">*</span>
                                             </label>
-                                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
                                             
                                                 <input type="text" id="address_line1" name="address_line_1" required="required" class="form-control col-md-7 col-xs-12">
 
@@ -230,13 +230,13 @@ $('#courses-list').change(function(event) {
                                     <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address_line_2">Address Line 2 <span class="required">*</span>
                                             </label>
-                                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
                                                  <input type="text" id="address_line2" name="address_line_2" required="required" class="form-control col-md-7 col-xs-12">
                                             </div>
                                     </div>
                                     <div class="form-group">
                                			<label class="control-label col-md-3 col-sm-3 col-xs-12">Country <span class="required">*</span></label>
-                                			<div class="col-md-9 col-sm-9 col-xs-12">
+                                			<div class="col-md-6 col-sm-6 col-xs-12">
                                 			<div class="radio">
                                 				<select class="form-control" id="countryd" name="country" required="required">
                                 					<option value="" disabled selected>Select Country</option>
@@ -251,7 +251,7 @@ $('#courses-list').change(function(event) {
                                      
                                      <div class="form-group">
                                			<label class="control-label col-md-3 col-sm-3 col-xs-12">City <span class="required">*</span></label>
-                                			<div class="col-md-9 col-sm-9 col-xs-12">
+                                			<div class="col-md-6 col-sm-6 col-xs-12">
                                 				<select class="form-control" id="city" name="city" required="required">
                                 					<option value="" disabled selected>Select City</option>
                                    	  				<option>Nairobi</option>
@@ -264,7 +264,7 @@ $('#courses-list').change(function(event) {
                                         <div class="form-group">
                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="post_code">Post Code <span class="required">*</span>
                                             </label>
-                                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" id="post_code" name="post_code" required="required" class="form-control col-md-7 col-xs-12">
                                             </div>
                                        </div>
@@ -272,7 +272,7 @@ $('#courses-list').change(function(event) {
                                     <div class="form-group">
                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passport-number">Passport Number <span class="required">*</span>
                                            </label>
-                                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" id="passport-number" name="passport-number" required="required" class="form-control col-md-7 col-xs-12">
                                             </div>
                                      </div>
@@ -280,13 +280,13 @@ $('#courses-list').change(function(event) {
                                 <div class="form-group">
                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Admission <span class="required">*</span>
                                           </label>
-                                           <div class="col-md-9 col-sm-9 col-xs-12">
+                                           <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input name="date_of_joining"  data-inputmask="'mask': '99/99/9999'" id="date_of_joining" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                                            </div>
                                    </div>
                        <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Category <span class="required">*</span></label>
-                                     <div class="col-md-9 col-sm-9 col-xs-12">
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                          <select class="form-control" name="category" required="required">
                                          <option value="" disabled selected>Select Category</option>
                                               <%
@@ -305,7 +305,7 @@ $('#courses-list').change(function(event) {
                
                                  <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Course Name <span class="required">*</span></label>
-                                     <div class="col-md-9 col-sm-9 col-xs-12">
+                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select class="form-control" id="courses-list" name="courses-list" required="required">
                                         <option value="" disabled selected>select joining course </option>
                                              <%
@@ -323,7 +323,7 @@ $('#courses-list').change(function(event) {
                                         
                             <div class="form-group">
                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Semester <span class="required">*</span></label>
-                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
                                 	<select class="form-control" id="semester-joined" name="semester-joined" required="required">
                                 	<option value="" disabled selected>Select Course First </option>
                                    	</select>
@@ -334,7 +334,7 @@ $('#courses-list').change(function(event) {
                                      
                                      <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Fees Structure <span class="required">*</span></label>
-                                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="form-control" name="feesTemplateId" required="required">
                                                 <option value="" disabled selected>Select Fees Structure </option>
                                                  <%FeesTemplateController feesTemplateController=new FeesTemplateController();
@@ -358,7 +358,7 @@ $('#courses-list').change(function(event) {
                                         
                                       
                                         
-                                </div>       
+                               
     						
     							
                                         
@@ -424,6 +424,15 @@ $('#courses-list').change(function(event) {
     <script type="text/javascript" src="js/notify/pnotify.core.js"></script>
     <script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
     <script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
+      <!-- input mask -->
+    <script src="js/input_mask/jquery.inputmask.js"></script>
+    <!-- input_mask -->
+    <script>
+        $(document).ready(function () {
+            $(":input").inputmask();
+        });
+    </script>
+    <!-- /input mask -->
     </body>
 </html>
 <%} %>

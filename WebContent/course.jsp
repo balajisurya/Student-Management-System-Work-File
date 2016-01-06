@@ -34,13 +34,23 @@
     <script type = "text/javascript"  src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
      <script src="js/mycustom/autosearch.js" ></script>
      <script src="js/mycustom/crud.js" ></script>
+      <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
       <script type = "text/javascript">
          $(document).ready(function() {
-        	 $("#clickcourse").click(function(event){
+        	 $("#coursevalid").click(function(event){
         			
+        		 $('#democourse').validate({
+  				   submitHandler: function(form) {
+  			      
+  			          
 
-        		   	$('#coursemodal').modal('show');
-        	   
+  	        			$('#testcourse').modal('show');
+  			        
+  			            return false;     
+  			        }
+  			    });	   
+  		   
+  		  
         	          
         	    });
          });
@@ -210,7 +220,7 @@
 
   </div><!-- end of LisDiv div -->
                                 
-	<div id="FormDiv" style="display: block;"> 
+	<div id="FormDiv" style="display: none;"> 
        <div class="clearfix"></div><!-- end of clearfix div -->
            <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
@@ -221,7 +231,7 @@
                      </div><!-- end of x_title div -->
                       <div class="x_content">
                                    <br />
-                         <form id="demo"  class="form-horizontal form-label-left" action="" method="post">
+                         <form id="democourse"  class="form-horizontal form-label-left" action="" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="course-name">Course Name <span class="required">*</span>
@@ -270,7 +280,7 @@
                                   <button type="reset" class="btn btn-info">Clear</button>
                                 
                                   
-                                  <button type="submit" class="btn btn-primary">Save</button>
+                                  <button id="coursevalid" type="submit" class="btn btn-primary">Save</button>
                                  
                                     
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
@@ -288,12 +298,18 @@
     </div><!-- end of FormDiv div --> 
   </div><!-- end of right col -->
  </div><!-- end of main body -->
-</div><!-- end of container body --><div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+</div><!-- end of container body --><div class="modal fade" id="testcourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-content">
+    <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
+               <h4>Confirmation?</h4> 
+            </div>
+    
             
             <div class="modal-body">
-                <Strong> Please Enter The Student ID Or Valid ID...</Strong>
+                <Strong> Are you sure ?, You want to Add this course??</Strong>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>

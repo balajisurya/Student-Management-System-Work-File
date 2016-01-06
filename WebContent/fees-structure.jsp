@@ -157,12 +157,31 @@
             </div>
             <div class="modal-body">
                  <form class="form-horizontal" role="form">
-                  		<div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="courseCode">Fees Structure Name</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" required="required" placeholder=""/>
+                 
+                 
+                  <div class="form-group">
+                    	  <label  class="control-label col-md-4 col-sm-4 col-xs-12" for="coursename">Fees Structure name</label>
+                    	    <div class="col-md-8 col-sm-8 col-xs-12">
+                        		<input type="text" class="form-control" id="coursename" placeholder="" required="required"/>
                             </div>
                         </div>
+                 
+                 
+                 
+                  		  <div class="form-group">
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Fees Item</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select class="select2_multiple form-control" multiple="multiple"  style="width:360px">
+                                                    <option>Choose option</option>
+                                                    <option>Option one</option>
+                                                    <option>Option two</option>
+                                                    <option>Option three</option>
+                                                    <option>Option four</option>
+                                                    <option>Option five</option>
+                                                    <option>Option six</option>
+                                                </select>
+                                            </div>
+                                        </div>
                    
                       
                         <div class="modal-footer">
@@ -497,7 +516,7 @@
                 $(".select2_group").select2({});
                 $(".select2_multiple").select2({
                     maximumSelectionLength: null,
-                    placeholder: "Select available courses",
+                    placeholder: "Select Options",
                     allowClear: true
                 });
             });

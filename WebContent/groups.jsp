@@ -45,7 +45,27 @@
     <script src="js/mycustom/crud.js" ></script>
     <script src="//code.jquery.com/jquery-1.8.2.min.js"></script> 
     <script type = "text/javascript"  src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+      <script type = "text/javascript">
+         $(document).ready(function() {
+        	 $("#groupvalid").click(function(event){
+        			
+        		 $('#demogroup').validate({
+  				   submitHandler: function(form) {
+  			      
+  			          
+
+  	        			$('#testgroup').modal('show');
+  			        
+  			            return false;     
+  			        }
+  			    });	   
+  		   
+  		  
+        	          
+        	    });
+         });
+      </script>
     
 </head>
 <body class="nav-md">
@@ -161,12 +181,23 @@
             <div class="modal-body">
                  <form class="form-horizontal" role="form">
                   		
-                        <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="coursename">Group Name</label>
-                    	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="groupname" placeholder="" required="required"/>
-                            </div>
-                        </div>
+                         <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Group</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select  name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:400px" >
+                                                <%
+                                                int courseSemestersCount1=courseSemesterList.size();
+                             					if(courseSemestersCount1>0){
+                             					 for(CourseSemester courseSem:courseSemesterList){%>
+                                                    <option value="<%out.print(courseSem.getCourseSemesterId());%>"><%out.print(courseController.courseDetailsFromId(courseSem.getCourseId()).get("course_name")+"  "+"Semester"+" "+courseSem.getCourseSemester());%></option>
+                                                  <%}
+                             					 }
+                             					 else{%>
+                             					 <option></option>
+                             					 <%} %>  
+                                                </select>
+                                            </div>
+                                        </div>
                         
                         <div class="modal-footer">
                         
@@ -199,7 +230,7 @@
                      </div><!-- end of x_title div -->
                       <div class="x_content">
                                    <br />
-                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/GroupServlet" method="post">
+                         <form id="demogroup" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/GroupServlet" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="group-name">Group Name <span class="required">*</span>
@@ -214,7 +245,7 @@
                               <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Courses For This Group</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select  name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:495px" >
+                                                <select  name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:610px" >
                                                 <%
                                                 int courseSemestersCount=courseSemesterList.size();
                              					if(courseSemestersCount>0){
@@ -236,7 +267,7 @@
                                  <button type="button" class="btn btn-primary" onclick="showDiv()">Cancel</button>
                                     
                                                	<button type="reset" class="btn btn-info">Clear</button>
-                                                <button type="submit" class="btn btn-success" name="save">save</button>               
+                                                <button id="groupvalid" class="btn btn-success" name="save">save</button>               
                                 </div><!-- end of col-md-6 col-sm-6 col-xs-12 col-md-offset-3 -->
                             </div><!-- end of form group 5 -->
                          </form><!-- end of form -->
@@ -249,11 +280,26 @@
  </div><!-- end of main body -->
 </div><!-- end of container body -->
 
-<div id="custom_notifications" class="custom-notifications dsp_none">
-     <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-     </ul>
-     <div class="clearfix"></div>
-     <div id="notif-group" class="tabbed_notifications"></div>
+<div class="modal fade" id="testgroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                </button>
+               <h4>Confirmation?</h4> 
+            </div>
+    
+            
+            <div class="modal-body">
+                <Strong> Are you sure ?, You want to Add this group??</Strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+               
+                
+            </div>
+        </div>
+    </div>
 </div>
 
   <script src="js/bootstrap.min.js"></script>
