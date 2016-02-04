@@ -49,7 +49,7 @@
 
         	        			$('#usermanagement').modal('show');
         			        
-        			            return false;     
+        			            return true;     
         			        }
         			    });	   
         		   
@@ -87,7 +87,7 @@
                         
                          <div class="x_content">
                                    <br />
-                         <form id="demo" data-parsley-validate class="form-horizontal form-label-left" action="" method="post">
+                         <form id="demo" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/UserManagementServlet" method="post">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user-name"> Name <span class="required">*</span>
@@ -160,7 +160,7 @@
             </div>
             <div class="modal-footer">
                 
-                <button type="submit" class="btn btn-round btn-success" >Yes</button>
+                <button type="button" class="btn btn-round btn-success" >Yes</button>
                 
             </div>
         </div>

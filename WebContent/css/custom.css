@@ -369,7 +369,7 @@ dark,
 }
 
 body {
-    color: #73879C;
+    color: #000000;
     background: #2A3F54;
     /*#ECF0F1; #FCFCFC*/
     
@@ -1074,7 +1074,7 @@ h2 {
 }
 
 .x_title {
-    border-bottom: 2px solid #E6E9ED;
+    border-bottom: 1px solid #00ACC1;
     padding: 1px 5px 6px;
     margin-bottom: 10px;
 }
@@ -1374,7 +1374,7 @@ table.jambo_table {
 }
 
 table.jambo_table thead {
-    background: rgba(52, 73, 94, 0.94);
+    background: #2196F3;
     color: #ECF0F1;
 }
 

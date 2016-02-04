@@ -118,7 +118,7 @@ $('#courses-list').change(function(event) {
                </div>
                 <div class="x_content">
                     <br />
-                    <form id="formreg" action="" method="post" class="form-horizontal form-label-left">
+                    <form id="formreg" method="post" action="${pageContext.request.contextPath}/StudentRegistartionServlet"class="form-horizontal form-label-left">
           
                          <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">First Name <span class="required">*</span>
@@ -365,6 +365,7 @@ $('#courses-list').change(function(event) {
                     </form>
                      <div class="modal fade" id="regmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
+    <form>
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
@@ -384,6 +385,7 @@ $('#courses-list').change(function(event) {
                 
             </div>
         </div>
+        </form>
     </div>
 </div>
                 </div>
