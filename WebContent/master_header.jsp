@@ -1,4 +1,8 @@
-
+<%
+if(session.getAttribute("authenticated")!="true"){
+	response.sendRedirect("user_login.jsp");
+ }
+else{%>
   <!-- top navigation -->
             <div class="top_nav">
 
@@ -11,7 +15,7 @@
                         </div>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="">
+                         <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     <img src="images/img.jpg" alt=""><% out.print(session.getAttribute("name")); %>
                                     <span class=" fa fa-angle-down"></span>
@@ -27,10 +31,13 @@
                                     </li>
                                 </ul>
                             </li>
-                             <li class="">
+                            
+                        
+                        <%if((session.getAttribute("type").equals("admin"))){%>
+                          <li class="">
                              
                             
-                              <a  href="javascript:;" data-toggle="modal" data-target="#release" ><i class="fa fa-unlock"></i></a>
+                              <a  href="javascript:;" data-toggle="modal" data-target="#release" ><i class="fa fa-clock-o"></i></a>
                              <div class="modal fade" id="release" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -52,9 +59,18 @@
 </div>
                              
                              </li>
+                                <%}%>
+                        
+                           
+                            
+                         
+                           
                              
                      </ul>
                     </nav>
                 </div>
 
             </div>
+            
+            <%}%>
+            

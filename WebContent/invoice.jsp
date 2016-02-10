@@ -139,6 +139,7 @@
                             </div><!-- end of form group 5 -->
                             
                             <div class="x_content">
+                              <div class="table-responsive">
                                     <table id="example" class="table table-striped responsive-utilities jambo_table">
                                         <thead>
                                             <tr class="headings">
@@ -179,6 +180,7 @@
                                             
                                         </tbody>
 									 </table>
+									 </div>
                                 </div>
                         
                               </form>

@@ -194,6 +194,7 @@
           					<div class="col-md-12 col-sm-12 col-xs-12">
              					<div class="x_panel">
              					      <div class="x_content">
+             					      <div class="table-responsive">
                                     <table id="example" class="table table-striped responsive-utilities jambo_table">
                                         <thead>
                                             <tr class="headings">
@@ -213,20 +214,21 @@
                                               <td class=" "><%out.print(user.getUserEmail());%></td>
                                               <td class=" "><%out.print(user.getUserType());%></td>
                                               <td class=" "><%out.print(user.getUserStatusTitle());%></td>
-                                              <td class=" ">
-                                              <ul class="nav navbar-right panel_toolbox">
-                               						<li class="dropdown">
-                                 						<a href="#" class="dropdown-toggle" data-toggle="modal" role="button" data-target="#confirm-edit"><span class="fa fa-pencil"></span></a>
-                               						</li>
-                               						<li>
-                                 						<a href="#" class="dropdown-toggle" data-toggle="modal" role="button" data-target="#confirm-delete"><span class="fa fa-trash-o"></span> </a>
-                               						</li>
-                            					</ul>
+                                              <td style="width: 250px">
+                                             
+                                                <a href="#"  data-href="#" data-id="" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirm-edit">
+                           <span class="glyphicon glyphicon-edit"></span> 
+                   </a>
+                   <a href="#"  data-href="#" data-id="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-delete">
+                           <span class="glyphicon glyphicon-trash"></span> 
+                   </a>
+                                 						
                                               </td>
                                           </tr>	 
                                         <% }} %>
                                         </tbody>
 									 </table>
+									 </div>
                                 </div>
              					
                					

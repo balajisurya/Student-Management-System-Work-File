@@ -85,8 +85,8 @@
  				  <div class="clearfix">
  				  <button type="button" class="btn btn-primary col-md-2" name="addGroup" onclick="showDiv()"><span class="glyphicon glyphicon-plus-sign" ></span>  Add Group</button>
  				  <button type="button" class="btn btn-success col-md-2" name="importExcel"><span class="glyphicon glyphicon-upload" ></span>  Export Excel</button>
- 				  <button type="button" class="btn btn-warning col-md-1" name="print"><span class="glyphicon glyphicon-print" ></span>  Print</button>
- 				  <input type="text" class="form-control col-md-2" id="search" placeholder="Group Search " style="width: 200px;margin-left: 400px"/>
+ 				  <button type="button" class="btn btn-warning col-md-2" name="print"><span class="glyphicon glyphicon-print" ></span>  Print</button>
+ 				  <input type="text" class="form-control col-md-2" id="search" placeholder="Group Search " style="width: 200px;margin-left: 500px"/>
  				  </div>
  				</div>
  					<%
