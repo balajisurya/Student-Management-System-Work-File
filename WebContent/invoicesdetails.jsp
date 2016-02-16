@@ -51,9 +51,9 @@
         	
         	
         	
+        	
          });
       </script>
-      
       
       
       
@@ -104,8 +104,8 @@
        <div class="clearfix"></div><!-- end of clearfix div -->
            <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                 <div id="invoice-content" class="x_panel" style="height:500px;">
-                 
+                 <div id="invoice-content"style="height:500px;">
+                       
                  
                      <!-- dynamic content -->
                     
@@ -159,6 +159,7 @@
    </script>
    <!-- /datepicker -->
   <!-- /footer content -->
+  
   
  
   

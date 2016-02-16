@@ -62,9 +62,8 @@
  				  <div class="x_title">
  				  <div class="clearfix">
  				  <button type="button" class="btn btn-primary col-md-3" name="addFeesStructure" onclick="showDiv()"><span class="glyphicon glyphicon-plus-sign" ></span>  Create New Fees Structure</button>
- 				  <button type="button" class="btn btn-success col-md-2" name="importExcel"><span class="glyphicon glyphicon-upload" ></span>  Export Excel</button>
- 				  <button type="button" class="btn btn-warning col-md-1" name="print"><span class="glyphicon glyphicon-print" ></span>  Print</button>
- 				  <input type="text" class="form-control col-md-2" id="search" placeholder="Search Fees Structure " style="width: 200px;margin-left: 300px"/>
+ 				  <button type="button" class="btn btn-success col-md-3" name="importExcel"><span class="glyphicon glyphicon-upload" ></span>  Export Excel</button>
+ 				  <button type="button" class="btn btn-warning col-md-3" name="print"><span class="glyphicon glyphicon-print" ></span>  Print</button>
  				  </div>
  				</div>
  					<%

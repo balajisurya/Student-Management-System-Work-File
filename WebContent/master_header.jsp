@@ -1,8 +1,7 @@
 <%
 if(session.getAttribute("authenticated")!="true"){
 	response.sendRedirect("user_login.jsp");
- }
-else{%>
+ }%>
   <!-- top navigation -->
             <div class="top_nav">
 
@@ -72,5 +71,5 @@ else{%>
 
             </div>
             
-            <%}%>
+       
             

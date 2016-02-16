@@ -185,20 +185,20 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">gifdjifdkgkdggkkdfgkfkgklfgklfkgfkldklfdlfdklflkdklhklgkhlfglkhlfgdljhkgfjj</th>
-                                                <td>Mark</td>
+                                                <td scope="row">Exam Fees</td>
+                                                <td>2000</td>
                                                 <td> <input name="country" required id="country" size="10" type="text" onkeypress="return isNumber(event)" /></td>
                                                 
                                             </tr>
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
+                                                <td scope="row">Lab Fees</td>
+                                                <td>2000</td>
                                              <td> <input name="country" id="country" size="10" type="text" onkeypress="return isNumber(event)" required /></td>
                                              
                                             </tr>
                                             <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
+                                                <td scope="row">Library Fees</td>
+                                                <td>2000</td>
                                         <td> <input name="country" id="country" size="10" type="text" onkeypress="return isNumber(event)" required /></td>
                                               
                                             </tr>

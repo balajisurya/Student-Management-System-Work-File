@@ -88,6 +88,7 @@ else{%>
                          <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/ResultServlet" method="post">
                              <!-- start of form-group 1 -->
                                <div class="x_content">
+                                <div  class="table-responsive">
                                     <table id="example" class="table table-striped responsive-utilities jambo_table">
                                         <thead>
                                             <tr class="headings">
@@ -127,6 +128,7 @@ else{%>
                                             
                                         </tbody>
 									 </table>
+									 </div>
                                 </div>
                                  <div class="x_title">
                                 <div class="form-group"><!-- start of form group 5 -->
