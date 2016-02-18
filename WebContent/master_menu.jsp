@@ -42,7 +42,9 @@
     								int count=0;
     								for(Menu m:menu){ 
     									int submenusize=menucontroller.getSubMenuList(m.getMenuId(),type).size();
-   							 %></ul>
+    									
+   							 %>
+   							 </ul>
                             <ul class="nav side-menu">
                                 <li><a href=<% out.println(m.getMenuLink());%>><i class="<%out.print(m.getMenuIcon());%>"></i> <% out.println(m.getMenuName()); %><span class="<%if(submenusize!=0){out.print("fa fa-chevron-down");}%>"></span></a>
                                 <%
@@ -54,6 +56,8 @@
                                         <li><a href=<% out.println(sm.getSubMenuLink());%>><% out.println(sm.getSubMenuName()); %></a>
                                         </li>
                                     </ul>
+                                    
+                                    
                                     <%
     	  								   }
     	 								}

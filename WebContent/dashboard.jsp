@@ -46,7 +46,7 @@ else{%>
       <div class="right_col" role="main">
        <div class="">
         <div class="row">
-        <%if(!session.getAttribute("type").equals("student")){%>
+       
           <!-- pie chart donut -->
                  <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="x_panel">
@@ -68,7 +68,7 @@ else{%>
                                			<div class="clearfix"></div>
                                </div>
                                 <div class="x_content2">
-                                    <div style="width:100%; height:300px;"> 
+                                    <div style="width:100%; height:100%;"> 
 										<canvas id="canvas_pie"></canvas>
 							        </div>
                                 </div>
@@ -118,38 +118,9 @@ else{%>
                             </div>
                         </div>
             <!-- /bar charts -->
- <%}else if(session.getAttribute("type").equals("student")){%>
- <!-- bar charts group -->
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                      <div class="x_panel">
-                         <div class="x_title">
-                              <h2>Results</h2>
-                                  <div class="clearfix"></div>
-                          </div>
-                           <div class="x_content2">
-                                  <div id="graphx" style="width:100%; height:300px;"></div>
-                            </div>
-                            
-                       </div>
-                   </div>
-              <!-- /bar charts group -->
             
-              <!-- bar chart -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Year-wise Fees Paid (KShs)</h2>
-                                 <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                     <div id="graph_bar" style="width:100%; height:290px;"></div>
-                                </div>
-                                
-                            </div>
-                        </div>
-            <!-- /bar charts -->
-  <%}
-%>
+ 
+ 
            </div>
         </div>
     </div>

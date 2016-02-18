@@ -104,10 +104,10 @@
                                 <tr class="even pointer">
                                     
                                     <td class=" ">121000040</td>
+                                    <td class=" ">#135451</td>
+                                    <td class=" ">121000210 </td>
                                     <td class=" ">May 23, 2014 11:47:56 PM </td>
-                                    <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                    <td class=" ">0</td>
-                                    <td class=" ">1</td>
+                                    <td class=" ">May 23, 2014 11:47:56 PM </td>
                                     <td class=" ">160</td>
                                      <td class=" ">121000039</td>
                                    
@@ -116,73 +116,73 @@
                                             <tr class="odd pointer">
                                               
                                                 <td class=" ">121000039</td>
-                                                <td class=" ">May 23, 2014 11:30:12 PM</td>
-                                                <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
+                                                <td class=" ">#135451</td>
+                                                <td class=" ">121000208 
                                                 </td>
-                                                <td class=" ">0</td>
-                                                <td class=" ">0</td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                 <td class=" ">160</td>
                                                <td class=" ">121000039</td>
                                             </tr>
                                             <tr class="even pointer">
                                                 
                                                 <td class=" ">121000038</td>
-                                                <td class=" ">May 24, 2014 10:55:33 PM</td>
-                                                <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
+                                                <td class=" ">#135451</td>
+                                                <td class=" ">121000203 
                                                 </td>
-                                                 <td class=" ">0</td>
-                                                 <td class=" ">1</td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                  <td class=" ">160</td>
                                                   <td class=" ">121000039</td>
                                             </tr>
                                             <tr class="odd pointer">
                                                 
                                                 <td class=" ">121000037</td>
-                                                <td class=" ">May 24, 2014 10:52:44 PM</td>
+                                                <td class=" ">#135451</td>
                                                 <td class=" ">121000204</td>
-                                                <td class=" ">0</td>
-                                                <td class=" ">1</td>
+                                               <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                               <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                 <td class=" ">160</td>
                                                  <td class=" ">121000039</td>
                                             </tr>
                                             <tr class="even pointer">
                                                 
                                                 <td class=" ">121000040</td>
-                                                <td class=" ">May 24, 2014 11:47:56 PM </td>
+                                               <td class=" ">#135451</td>
                                                 <td class=" ">121000210</td>
-                                               <td class=" ">0</td>
-                                               <td class=" ">1</td>
+                                              <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                              <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                <td class=" ">160</td>
                                                 <td class=" ">121000039</td>
                                              </tr>
                                             <tr class="odd pointer">
                                                 
                                                 <td class=" ">121000039</td>
-                                                <td class=" ">May 26, 2014 11:30:12 PM</td>
-                                                <td class=" ">121000208 <i class="error fa fa-long-arrow-down"></i>
+                                             <td class=" ">#135451</td>
+                                                <td class=" ">121000208 
                                                 </td>
-                                               <td class=" ">0</td>
-                                               <td class=" ">1</td>
+                                               <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                               <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                <td class=" ">160</td>
                                                 <td class=" ">121000039</td>
                                             </tr>
                                             <tr class="even pointer">
                                                
                                                 <td class=" ">121000038</td>
-                                                <td class=" ">May 26, 2014 10:55:33 PM</td>
+                                            <td class=" ">#135451</td>
                                                 <td class=" ">121000203</td>
-                                                 <td class=" ">0</td>
-                                                  <td class=" ">1</td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                   <td class=" ">160</td>
                                                    <td class=" ">121000039</td>
                                             </tr>
                                             <tr class="odd pointer">
                                                 
                                                 <td class=" ">121000037</td>
-                                                <td class=" ">May 26, 2014 10:52:44 PM</td>
+                                               <td class=" ">#135451</td>
                                                 <td class=" ">121000204</td>
-                                                 <td class=" ">0</td>
-                                                 <td class=" ">1</td>
+                                                 <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                                 <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                 <td class=" ">160</td>
                                                  <td class=" ">121000039</td>
                                             </tr>
@@ -190,20 +190,20 @@
                                             <tr class="even pointer">
                                                
                                                 <td class=" ">121000040</td>
-                                                <td class=" ">May 27, 2014 11:47:56 PM </td>
+                                                <td class=" ">#135451</td>
                                                 <td class=" ">121000210</td>
-                                                 <td class=" ">0</td>
-                                                 <td class=" ">1</td>
+                                                 <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                                 <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                  <td class=" ">160</td>
                                                   <td class=" ">121000039</td>
                                             </tr>
                                             <tr class="odd pointer">
                                                 
                                                 <td class=" ">121000039</td>
-                                                <td class=" ">May 28, 2014 11:30:12 PM</td>
+                                                 <td class=" ">#135451</td>
                                                 <td class=" ">121000208</td>
-                                                <td class=" ">0</td>
-                                                <td class=" ">1</td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                                <td class=" ">May 23, 2014 11:47:56 PM </td>
                                                 <td class=" ">160</td>
                                                  <td class=" ">121000039</td>
                                            

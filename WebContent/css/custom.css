@@ -844,6 +844,8 @@ li.current-page a {
 }
 
 .nav.child_menu > li > a {
+	
+	
     color: rgba(255, 255, 255, 0.75) !important;
     font-size: 12px;
     padding: 9px;
@@ -983,7 +985,7 @@ article.media {
 }
 
 .expand {
-    display: block;
+    display: none;
     text-decoration: none;
     color: #555;
     cursor: pointer;
