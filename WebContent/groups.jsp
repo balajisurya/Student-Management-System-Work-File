@@ -38,6 +38,7 @@
     <!-- select2 -->
     <link href="css/select/select2.min.css" rel="stylesheet">
     <!-- switchery -->
+    <link rel="stylesheet" href="http://jqueryvalidation.org/files/demo/site-demos.css">
     <link rel="stylesheet" href="css/switchery/switchery.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
     <script src="//oss.maxcdn.com/bootbox/4.2.0/bootbox.min.js"></script>
@@ -48,22 +49,56 @@
      <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
       <script type = "text/javascript">
          $(document).ready(function() {
+        	//deleting group
+        	 $('#grouplist td a#delete').click(function() {
+        		   var groupid = $(this).attr('data-id');
+        		   $('#confirm-delete').on('show.bs.modal', function (e) {
+        			   $('#deleteCourse').attr("href", "GroupServlet?groupId="+groupid+"&action=delete");
+        			});
+        		   
+        		});
+        	 
+        	//adding group
         	 $("#groupvalid").click(function(event){
         			
         		 $('#demogroup').validate({
   				   submitHandler: function(form) {
-  			      
-  			          
-
-  	        			$('#testgroup').modal('show');
-  			        
+                    $('#testgroup').modal('show');
+  	        		 $('#newgroup').click(function(){
+  	             		 
+  	             		 var data=$('#demogroup').serialize()+"&action=save";
+  	             		 $.post("GroupServlet",data,function(data) {
+  	             			 window.location.href="groups.jsp";
+  	                      });
+  	             	});
   			            return false;     
   			        }
   			    });	   
-  		   
-  		  
-        	          
-        	    });
+        		 
+        	 });
+        	
+        	//edit
+        	 $('#courselist td a#edit').click(function() {
+        		var courseid = $(this).attr('data-id');
+        		
+        		//retrive to display
+        	   $('#confirm-edit').on('show.bs.modal', function (e) {
+      			 $.get('CourseServlet',{action:"reterive",courseId:courseid},function(response){
+      				  $("#edityear").val(response.duration_in_years);
+     		    	  $("#editcoursename").val(response.course_name);
+     		    	  $("#editsem").val(response.duration_in_semesters);
+     		    	
+     		      });
+      			//update code
+      			
+      			 $("#updateCourse").click(function(event){
+      				 var data=$('#courseUpdateModal').serialize()+"&action=update"+"&courseId="+courseid;
+	             		 $.post("CourseServlet",data,function(data) {
+	             			 window.location.href="course.jsp";
+	                      });
+      			   });
+      			});
+        	});
          });
       </script>
     
@@ -156,9 +191,9 @@
             <div class="modal-body">
                 <h5>Are you sure ?, You want to delete this Group??</h5>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id="deletemodalfooter">
                
-                <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
+                <button  id="deletegroup"class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
                                 title: 'Notification',
                                 text: 'successfully deleted',
                                 type: 'success'
@@ -180,21 +215,32 @@
             </div>
             <div class="modal-body">
                  <form class="form-horizontal" role="form">
-                  		
+                  		   <div class="form-group">
+                                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="group-name">Group Name <span class="required">*</span>
+                                   </label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                         <input name="group-name" type="text" id="editgroup-name" required class="form-control col-md-7 col-xs-12">
+                                     </div>
+                              </div>
                          <div class="form-group">
+                         
+                         
+                         
+                                            
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Group</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select  name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:400px" >
-                                                <%
-                                                int courseSemestersCount1=courseSemesterList.size();
-                             					if(courseSemestersCount1>0){
-                             					 for(CourseSemester courseSem:courseSemesterList){%>
+                                               <%
+                                                 int courseSemestersCount1=courseSemesterList.size();
+                              					if(courseSemestersCount1>0){
+                             					                            					 for(CourseSemester courseSem:courseSemesterList){
+                            					 if(courseSem.getLockStatus()!=1){%>
                                                     <option value="<%out.print(courseSem.getCourseSemesterId());%>"><%out.print(courseController.courseDetailsFromId(courseSem.getCourseId()).get("course_name")+"  "+"Semester"+" "+courseSem.getCourseSemester());%></option>
-                                                  <%}
-                             					 }
-                             					 else{%>
-                             					 <option></option>
-                             					 <%} %>  
+                                                   <%}
+                              					 }                             					 }
+                              					 else{%>
+                              					 <option></option>
+                              					 <%} %>  
                                                 </select>
                                             </div>
                                         </div>
@@ -247,15 +293,17 @@
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select  name="courseSemList"class="select2_multiple form-control" multiple="multiple" style="width:610px" >
                                                 <%
-                                                int courseSemestersCount=courseSemesterList.size();
-                             					if(courseSemestersCount>0){
-                             					 for(CourseSemester courseSem:courseSemesterList){%>
-                                                    <option value="<%out.print(courseSem.getCourseSemesterId());%>"><%out.print(courseController.courseDetailsFromId(courseSem.getCourseId()).get("course_name")+"  "+"Semester"+" "+courseSem.getCourseSemester());%></option>
-                                                  <%}
-                             					 }
-                             					 else{%>
-                             					 <option></option>
-                             					 <%} %>  
+                                                 int courseSemestersCount=courseSemesterList.size();
+                              					if(courseSemestersCount>0){                           					
+                             					 for(CourseSemester courseSem:courseSemesterList){
+                             					 if(courseSem.getLockStatus()!=1){%>
+                                                     <option value="<%out.print(courseSem.getCourseSemesterId());%>"><%out.print(courseController.courseDetailsFromId(courseSem.getCourseId()).get("course_name")+"  "+"Semester"+" "+courseSem.getCourseSemester());%></option>
+                                                   <%}
+                              					 }
+                            					 }
+                              					 else{%>
+                              					 <option></option>
+                              					 <%} %>  
                                                 </select>
                                             </div>
                                         </div>
@@ -294,7 +342,7 @@
                 <Strong> Are you sure ?, You want to Add this group??</Strong>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+                <button type="button" id="newgroup" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
                
                 
             </div>

@@ -49,7 +49,6 @@ public class StudentRegistartionServlet extends HttpServlet {
 		}
 		 String studentEmail=request.getParameter("student_email");
 		 String studentContact=request.getParameter("contact_number");
-		 int 	studentAge=Integer.parseInt(request.getParameter("student-age"));
 		 String dateOfBirth=request.getParameter("student_dob");
 		 java.sql.Date studentDateOfBirth=null;
 		try {
@@ -82,7 +81,6 @@ public class StudentRegistartionServlet extends HttpServlet {
 		registerStudent.setParentOrGuardianFirstName(parentOrGuardianFirstName);
 		registerStudent.setParentOrGuardianLastName(parentOrGuardianLastName);
 		registerStudent.setSex(studentGender);
-		registerStudent.setAge(studentAge);
 		registerStudent.setDateOfBirth(studentDateOfBirth);
 		registerStudent.setAddressLineOne(studentAddressLine1);
 		registerStudent.setAddressLineTwo(studentAddressLine2);

@@ -51,7 +51,7 @@ public class CourseController {
     	courseStmt.setString(4,c.getCourseDescription());
     	courseStmt.setString(5,c.getCourseImage());
     	courseStmt.execute();
-    	new CourseSemesterController().addCourseSemesters();
+    	new CourseSemesterController().addCourseSemesters(0);
     	}
     	catch(Exception e){ 
     		System.out.println("Exception in Add Course of course controller "+e);
@@ -106,13 +106,11 @@ public class CourseController {
     	  try{
     		  DBConnection courseSc=(DBConnection) sc.getAttribute("dbConn");
           	  courseConn=courseSc.getDBConnection();
-          	  courseStmt=courseConn.prepareStatement("UPDATE tbl_courses SET course_name=?,course_description=? duration_in_years=?,duration_in_semesters=?,image=? where course_id=?");
+          	  courseStmt=courseConn.prepareStatement("UPDATE tbl_courses SET course_name=?,duration_in_years=?,duration_in_semesters=? where course_id=?");
           	  courseStmt.setString(1,c.getCourseName());
-          	  courseStmt.setString(2, c.getCourseDescription());
-          	  courseStmt.setInt(3, c.getDurationInYears());
-          	  courseStmt.setInt(4,c.getDurationInSemester());
-          	  courseStmt.setString(5, c.getCourseImage());
-          	  courseStmt.setInt(6,c.getCourseId());
+          	  courseStmt.setInt(2, c.getDurationInYears());
+          	  courseStmt.setInt(3,c.getDurationInSemester());
+          	  courseStmt.setInt(4,c.getCourseId());
           	  courseStmt.executeUpdate();
     	  }catch(Exception e){
     		  System.out.println("Exception in update Course of course controller "+e);

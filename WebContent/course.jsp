@@ -26,6 +26,7 @@
     <link href="css/editor/index.css" rel="stylesheet">
     <!-- select2 -->
     <link href="css/select/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://jqueryvalidation.org/files/demo/site-demos.css">
     <!-- switchery -->
     <link rel="stylesheet" href="css/switchery/switchery.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -37,22 +38,57 @@
       <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
       <script type = "text/javascript">
          $(document).ready(function() {
+        	 
+        	 //deleting course
+        	 $('#courselist td a#delete').click(function() {
+        		   var courseid = $(this).attr('data-id');
+        		   $('#confirm-delete').on('show.bs.modal', function (e) {
+        			   $('#deleteCourse').attr("href", "CourseServlet?courseId="+courseid+"&action=delete");
+        			});
+        		   
+        		});
+        	 
+        	//adding course
         	 $("#coursevalid").click(function(event){
         			
         		 $('#democourse').validate({
   				   submitHandler: function(form) {
-  			      
-  			          
-
-  	        			$('#testcourse').modal('show');
-  			        
+                    $('#testcourse').modal('show');
+  	        		 $('#newCourse').click(function(){
+  	             		 
+  	             		 var data=$('#democourse').serialize()+"&action=save";
+  	             		 $.post("CourseServlet",data,function(data) {
+  	             			 window.location.href="course.jsp";
+  	                      });
+  	             	});
   			            return false;     
   			        }
   			    });	   
-  		   
-  		  
-        	          
-        	    });
+        		 
+        	 });
+        	
+        	//edit
+        	 $('#courselist td a#edit').click(function() {
+        		var courseid = $(this).attr('data-id');
+        		
+        		//retrive to display
+        	   $('#confirm-edit').on('show.bs.modal', function (e) {
+      			 $.get('CourseServlet',{action:"reterive",courseId:courseid},function(response){
+      				  $("#edityear").val(response.duration_in_years);
+     		    	  $("#editcoursename").val(response.course_name);
+     		    	  $("#editsem").val(response.duration_in_semesters);
+     		    	
+     		      });
+      			//update code
+      			
+      			 $("#updateCourse").click(function(event){
+      				 var data=$('#courseUpdateModal').serialize()+"&action=update"+"&courseId="+courseid;
+	             		 $.post("CourseServlet",data,function(data) {
+	             			 window.location.href="course.jsp";
+	                      });
+      			   });
+      			});
+        	});
          });
       </script>
     <script type="text/javascript">
@@ -102,7 +138,7 @@
  			
  	<div  class="x_panel">
  	<div  id="printList" class="table-responsive">
-    <table id="table" class="table table-bordered table-striped">
+    <table id="courselist" class="table table-bordered table-striped">
         <thead >
             <tr>
                 <th>S.NO</th>
@@ -118,17 +154,17 @@
  				int SNO=1;
  				for(Courses course:courses){	
  		%>
-            <tr>
+            <tr id="courseList">
                 <td><%out.print(SNO);%></td>
                 <td style="width: 120px"><%out.print("COU"+course.getCourseId());%></td>
                 <td><%out.print(course.getCourseName());%></td>
                 <td style="width:50px"><%out.print(course.getDurationInYears()+"/"+course.getDurationInSemester());%></td>
                 <td style="width: 250px">
                 
-                   <a href="#"  data-href="#" data-id="<%out.print(course.getCourseId());%>" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirm-edit">
+                   <a href="#" id="edit"  data-href="#" data-id="<%out.print(course.getCourseId());%>" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirm-edit">
                            <span class="glyphicon glyphicon-edit"></span> 
                    </a>
-                   <a href="#"  data-href="#" data-id="<%out.print(course.getCourseId());%>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-delete">
+                   <a href="#"  id="delete" data-href="#" data-id="<%out.print(course.getCourseId());%>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-delete">
                            <span class="glyphicon glyphicon-trash"></span> 
                    </a>
                 </td>
@@ -156,14 +192,8 @@
             <div class="modal-body">
                 <h5>Are you sure ?, You want to delete this course ??</h5>
             </div>
-            <div class="modal-footer">
-              
-                <button class="btn btn-round btn-danger" data-dismiss="modal" onclick="new PNotify({
-                                title: 'Notification',
-                                text: 'successfully deleted',
-                                type: 'success'
-                            });">Delete</button>
-                
+            <div class="modal-footer" id="deletemodalfooter">
+            <a  id="deleteCourse" class="btn btn-round btn-danger"  role="button">delete</a>
             </div>
         </div>
     </div>
@@ -179,28 +209,29 @@
                <h4>Edit Course</h4> 
             </div>
             <div class="modal-body">
-                 <form class="form-horizontal" role="form">
+                 <form class="form-horizontal" id="courseUpdateModal" role="form">
                   		<div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="courseCode">Course Code</label>
+                    	  <label  class="col-sm-3 control-label" for="editcoursename">Course Name</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="courseCode" placeholder=""  required="required" />
+                        		<input type="text" class="form-control" name="editcoursename" id="editcoursename" placeholder=""  required="required" />
                             </div>
                         </div>
                         <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="coursename">Course Name</label>
+                    	  <label  class="col-sm-3 control-label" for="edityear">Duration in Years</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="coursename" placeholder="" required="required"/>
+                        		<input type="text" class="form-control" name="edityear" id="edityear" placeholder="" required="required"/>
                             </div>
                         </div>
                         <div class="form-group">
-                    	  <label  class="col-sm-3 control-label" for="yearsem">Years/Semester</label>
+                    	  <label  class="col-sm-3 control-label" for="editsem">Semesters</label>
                     	    <div class="col-sm-9">
-                        		<input type="text" class="form-control" id="yearsem" placeholder="" required="required" onkeypress="return isNumber(event)"/>
+                        		<input type="text" class="form-control" name="editsem" id="editsem" placeholder="" required="required" onkeypress="return isNumber(event)"/>
                             </div>
                         </div>
+                        
                         <div class="modal-footer">
                         
-                		<button type="submit" class="btn btn-round btn-success">Update</button>
+                		<button type="button" id="updateCourse" class="btn btn-round btn-success">Update</button>
                       </div>
                  </form>
     
@@ -231,13 +262,13 @@
                      </div><!-- end of x_title div -->
                       <div class="x_content">
                                    <br />
-                         <form id="democourse"  class="form-horizontal form-label-left" action="" method="post">
+                         <form id="democourse"  class="form-horizontal form-label-left">
                              <!-- start of form-group 1 -->
                              <div class="form-group">
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="course-name">Course Name <span class="required">*</span>
                                    </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                         <input name="coursename" type="text" id="coursename" required class="form-control col-md-7 col-xs-12">
+                                         <input name="course-name" type="text" id="course-name" required class="form-control col-md-7 col-xs-12">
                                      </div>
                               </div>
                               <!-- end of form-group 1 -->
@@ -312,7 +343,7 @@
                 <Strong> Are you sure ?, You want to Add this course??</Strong>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
+                <button type="button" id="newCourse" class="btn btn-round btn-primary" data-dismiss="modal">OK</button>
                
                 
             </div>

@@ -1,3 +1,5 @@
+<%@page import="in.jdsoft.reportingtool.feeders.DataSource"%>
+<%@page import="in.jdsoft.reportingtool.feeders.MySQLDataSource"%>
 <%@page import="in.jdsoft.studentmanagement.controller.FeesTemplateController"%>
 <%@page import="in.jdsoft.studentmanagement.controller.TemplateItemController"%>
 <%@page import="in.jdsoft.studentmanagement.controller.GroupController"%>
@@ -33,7 +35,9 @@ else{%>
     <link rel="stylesheet" type="text/css" href="css/maps/jquery-jvectormap-2.0.1.css" />
     <link href="css/icheck/flat/green.css" rel="stylesheet">
     <link href="css/floatexamples.css" rel="stylesheet" />
-
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
    <title>Dashboard</title>
    
@@ -49,6 +53,11 @@ else{%>
 
                 <br />
                 <div class="">
+				
+				<%
+               MySQLDataSource datasource= new MySQLDataSource("localhost",3306,"db_studentmanagement","test","test");
+               datasource.getTables();
+               %>
                     <div class="row top_tiles">
                         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12" >
                             <div class="tile-stats">

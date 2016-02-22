@@ -15,7 +15,6 @@ public class StudentRegistration {
 	public  String parentOrGuardianFirstName;
 	public  String parentOrGuardianLastName;
 	public String sex;
-	public int age;
 	public Date dateOfBirth,joinedDate;
 	public String addressLineOne;
 	public String addressLineTwo;
@@ -87,12 +86,7 @@ public class StudentRegistration {
 	public String getSex() {
 		return sex;
 	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public int getAge() {
-		return age;
-	}
+	
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}

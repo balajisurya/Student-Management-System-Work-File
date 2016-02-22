@@ -5,6 +5,7 @@ public class CourseSemester {
 	public int courseSemesterId;
 	public int courseId;
 	public int courseSemester;
+	public int lockStatus;
 	
 	
 	public void setCourseId(int courseId) {
@@ -30,4 +31,14 @@ public class CourseSemester {
 	public int getCourseSemesterId() {
 		return courseSemesterId;
 	}
+
+	public int getLockStatus() {
+		return lockStatus;
+	}
+
+	public void setLockStatus(int lockStatus) {
+		this.lockStatus = lockStatus;
+	}
+
+	
 }

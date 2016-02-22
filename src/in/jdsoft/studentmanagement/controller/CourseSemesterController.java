@@ -26,17 +26,17 @@ static ServletContext sc;
 		 CourseSemesterController.sc=sc;
 	 }
 
-	  public void addCourseSemesters(){
+	  public void addCourseSemesters(int courseId){
 		  try{
 			  	DBConnection courseSemSc=(DBConnection) sc.getAttribute("dbConn");
 			  	courseSemConn=courseSemSc.getDBConnection();
-			  	int courseId=lastInsertedCourseId();
 			  	int totalSemester=(Integer)courseController.courseDetailsFromId(courseId).get("duration_in_semesters");
 	    	
 	    		for(int semester=1;semester<=totalSemester;semester++){
-	    			courseSemStmt=courseSemConn.prepareStatement("INSERT INTO tbl_course_semesters(course_id,semester) values(?,?)");
+	    			courseSemStmt=courseSemConn.prepareStatement("INSERT INTO tbl_course_semesters(course_id,semester,lock_status) values(?,?,?)");
 	    			courseSemStmt.setInt(1,courseId);
 	    			courseSemStmt.setInt(2,semester);
+	    			courseSemStmt.setInt(3, 0);
 	    			courseSemStmt.execute();
 	    		}
 	    	
@@ -48,26 +48,21 @@ static ServletContext sc;
 	    	}
 	  }
 	  
-	  
-	  public int lastInsertedCourseId(){
-	    	int courseId = 0;
-	    	try{
-	    		DBConnection courseSemSc=(DBConnection) sc.getAttribute("dbConn");
-	    		
-	    		courseSemConn=courseSemSc.getDBConnection();
-	    		courseSemStmt=courseSemConn.prepareStatement("SELECT MAX(course_id) FROM tbl_courses");
-	    		courseSemRs=courseSemStmt.executeQuery();
-	        	if(courseSemRs.next()){
-	        		courseId=courseSemRs.getInt(1);
-	        	}
-	        		
-	    	}catch(Exception e)
-	    	{
-	    		System.out.println(e);
-	    	}
-	    	
-	    	return courseId;
-	    }
+	  public void lockStatus(int courseSemesterId,int lockStatus){
+	  	  try{
+	  		  DBConnection courseSemSc=(DBConnection) sc.getAttribute("dbConn");
+	  		  courseSemConn=courseSemSc.getDBConnection();
+	  		  courseSemStmt=courseSemConn.prepareStatement("UPDATE tbl_course_semesters SET lock_status=? WHERE course_sem_id=?");
+	  		  courseSemStmt.setInt(1,lockStatus);
+	  		  courseSemStmt.setInt(2,courseSemesterId);
+	  		  courseSemStmt.executeUpdate();
+	  	  }catch(Exception e){
+	  		  System.out.println("Exception in lockingStatus of courseSemester "+e);
+	  	  }finally{
+	  		  close();
+	  	  }
+	  }
+	
 	  
 	  public ArrayList<CourseSemester> getAllCourseSemesters(){
 	    	try{
@@ -81,6 +76,7 @@ static ServletContext sc;
 	        		courseSemeter.setCourseSemesterId(courseSemRs.getInt("course_sem_id"));
 	        		courseSemeter.setCourseId(courseSemRs.getInt("course_id"));
 	        		courseSemeter.setCourseSemester(courseSemRs.getInt("semester"));
+	        		courseSemeter.setLockStatus(courseSemRs.getInt("lock_status"));
 	        		returnAllCourseSemester.add(courseSemeter);
 	        		
 	        	}

@@ -19,7 +19,7 @@ static ServletContext sc;
     ResultSet groupMappingRs=null;
     ArrayList<Group> viewMappingGroups=new ArrayList<>();
   
-    
+    CourseSemesterController courseSemesterController=new CourseSemesterController();
 	  public void getDbAccess(ServletContext sc){
 			GroupMappingController.sc=sc;
 	  }
@@ -34,6 +34,7 @@ static ServletContext sc;
 			  		groupMappingStmt.setInt(1,groupId);
 			  		groupMappingStmt.setInt(2,courseSemester.getCourseSemesterId());
 			  		groupMappingStmt.execute();
+			  		courseSemesterController.lockStatus(courseSemester.getCourseSemesterId(),1);
 			    }
 			  	
 	    	}catch(Exception e){ 
